@@ -1,5 +1,82 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Poster Promosi — KejutanKita Digital</title><style>
-*{box-sizing:border-box}body{margin:0;background:#211924;font-family:Inter,system-ui,Arial,sans-serif;color:#fff}.tools{position:sticky;top:0;z-index:10;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:10px;background:rgba(15,9,18,.92);border-bottom:1px solid rgba(255,255,255,.12)}button{border:0;border-radius:999px;padding:10px 14px;font-weight:800;cursor:pointer}.primary{background:#ff4fa3;color:white}.ghost{background:rgba(255,255,255,.08);color:white;border:1px solid rgba(255,255,255,.12)}.stage{min-height:calc(100vh - 58px);display:grid;place-items:center;padding:22px}.poster{width:min(540px,94vw);aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:28px;background:radial-gradient(circle at 50% 8%,rgba(255,142,199,.24),transparent 32%),linear-gradient(180deg,#1b0b1d,#09040d);box-shadow:0 30px 90px rgba(0,0,0,.45);padding:36px 30px}.spark{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(60px);background:#ff4fa3;opacity:.18}.s1{right:-80px;top:120px}.s2{left:-90px;bottom:80px}.brand{font-weight:900;font-size:20px}.brand span{color:#ff8cc6}.tag{margin-top:55px;color:#ffafd5;font-size:11px;letter-spacing:.18em;font-weight:900}.title{font-size:clamp(36px,8vw,62px);line-height:.98;margin:11px 0 15px;font-weight:950}.title em{font-style:normal;color:#ff76b8}.desc{color:#d6c7d7;line-height:1.55;font-size:14px;max-width:420px}.mock{margin:28px auto 22px;width:72%;aspect-ratio:1/1;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;background:rgba(255,255,255,.03);box-shadow:0 0 50px rgba(255,75,163,.14)}.heart{font-size:130px;color:#ff4fa3;filter:drop-shadow(0 0 20px rgba(255,79,163,.5))}.price{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.p{padding:11px 7px;border-radius:13px;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}.p b{display:block;font-size:13px}.p span{display:block;color:#ffb6d8;font-size:14px;font-weight:900;margin-top:4px}.cta{position:absolute;left:30px;right:30px;bottom:30px;padding:14px;border-radius:999px;text-align:center;background:linear-gradient(135deg,#ff4fa3,#ff82c1);font-weight:900}.mini{margin-top:11px;text-align:center;color:#ae9bad;font-size:10px}.modal{position:fixed;inset:0;z-index:20;display:none;place-items:center;background:rgba(0,0,0,.7);padding:18px}.modal.show{display:grid}.box{width:min(460px,96vw);padding:20px;border-radius:20px;background:#130d17}.field{display:grid;gap:6px;margin:10px 0}.field label{font-size:11px;color:#d7c7d8}.field input{padding:11px 12px;border-radius:12px;background:#0d0910;border:1px solid rgba(255,255,255,.12);color:white}@media print{body{background:white}.tools{display:none}.stage{padding:0}.poster{width:1080px;height:1920px;border-radius:0;box-shadow:none}}
-</style></head><body><div class="tools"><button class="primary" id="setup">⚙️ Edit Poster</button><button class="ghost" onclick="window.print()">🖨️ Print / Save PDF</button><button class="ghost" onclick="alert('Di HP: buka layar penuh lalu screenshot poster ini. Untuk hasil paling tajam, gunakan Print / Save PDF.')">📱 Cara Simpan</button></div><div class="stage"><article class="poster"><div class="spark s1"></div><div class="spark s2"></div><div class="brand" id="brand">KejutanKita <span>Digital</span></div><div class="tag">SURPRISE WEBSITE PERSONAL</div><div class="title">Bukan cuma <em>“HBD”</em>.<br>Bikin dia terharu.</div><div class="desc">Website kejutan dengan foto, musik, pesan berjalan, animasi LOVE, fireworks, dan QR romantis.</div><div class="mock"><div class="heart">♥</div></div><div class="price"><div class="p"><b>Basic</b><span id="pb">Rp29K</span></div><div class="p"><b>Premium</b><span id="pp">Rp59K</span></div><div class="p"><b>Exclusive</b><span id="pe">Rp99K</span></div></div><div class="mini">Ulang tahun • Anniversary • Lamaran • Wisuda • LDR</div><div class="cta" id="cta">Order via WhatsApp ♥</div></article></div><div class="modal" id="modal"><div class="box"><h3 style="margin-top:0">Edit Poster</h3><div class="field"><label>Nama brand</label><input id="ib" value="KejutanKita Digital"></div><div class="field"><label>Harga Basic (contoh 29K)</label><input id="i1" value="Rp29K"></div><div class="field"><label>Harga Premium</label><input id="i2" value="Rp59K"></div><div class="field"><label>Harga Exclusive</label><input id="i3" value="Rp99K"></div><div class="field"><label>Teks CTA</label><input id="ic" value="Order via WhatsApp ♥"></div><div style="display:flex;gap:8px"><button class="primary" id="save">Simpan</button><button class="ghost" id="close">Tutup</button></div></div></div><script>
-const m=document.getElementById('modal');setup.onclick=()=>m.classList.add('show');close.onclick=()=>m.classList.remove('show');save.onclick=()=>{const words=ib.value.trim().split(/\s+/);brand.innerHTML=words.length>1?words.slice(0,-1).join(' ')+' <span>'+words.at(-1)+'</span>':ib.value;pb.textContent=i1.value;pp.textContent=i2.value;pe.textContent=i3.value;cta.textContent=ic.value;m.classList.remove('show')};m.onclick=e=>{if(e.target===m)m.classList.remove('show')}
-</script></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>ZA Moments — Disposable Wedding Camera</title>
+<meta name="theme-color" content="#f6efe9" />
+<style>
+:root{--bg:#f6efe9;--card:#fffaf6;--ink:#2d2623;--muted:#7f746f;--accent:#d8a9b2;--line:#eadbd4;--dark:#1f1b19;--ok:#5b7f68}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+button,input{font:inherit}button{cursor:pointer}.app{max-width:430px;margin:0 auto;min-height:100dvh;background:linear-gradient(180deg,#fffaf7 0%,#f6efe9 100%);position:relative;overflow:hidden}
+.screen{display:none;min-height:100dvh;padding:20px}.screen.active{display:flex;flex-direction:column}.hero{justify-content:flex-end;padding:26px;background:linear-gradient(180deg,rgba(30,20,20,.05),rgba(30,20,20,.62)),url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80') center/cover}
+.brand{position:absolute;top:22px;left:24px;color:white;font-weight:700;letter-spacing:.08em}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:#f8e9e2}.hero h1{font-family:Georgia,serif;font-size:44px;line-height:.95;margin:10px 0 12px;color:white}.hero p{color:#f8ece6;margin:0 0 22px}.btn{border:0;border-radius:18px;padding:15px 18px;font-weight:700}.btn.primary{background:white;color:var(--dark)}.btn.dark{background:var(--dark);color:white}.btn.soft{background:#f1dfdf;color:#5d4349}.row{display:flex;gap:10px}.row>*{flex:1}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.pill{background:#f1e7e2;border:1px solid var(--line);padding:8px 12px;border-radius:999px;font-size:13px}.title{font-family:Georgia,serif;font-size:28px;margin:0}.muted{color:var(--muted)}
+.camera-wrap{background:#111;border-radius:28px;overflow:hidden;position:relative;aspect-ratio:3/4;box-shadow:0 18px 50px rgba(40,24,20,.18)}video,canvas.preview{width:100%;height:100%;object-fit:cover}.camera-overlay{position:absolute;inset:auto 0 0;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.6));color:white;display:flex;justify-content:space-between;align-items:end}.shots{font-weight:800;font-size:22px}.small{font-size:12px;opacity:.8}.camera-actions{display:flex;justify-content:center;align-items:center;gap:26px;padding:22px 0}.shutter{width:74px;height:74px;border-radius:50%;background:white;border:7px solid #ded6d1;box-shadow:0 0 0 2px #fff}.iconbtn{width:46px;height:46px;border-radius:50%;border:0;background:#eadfd9}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 10px 30px rgba(54,33,25,.06)}
+.develop{justify-content:center;align-items:center;text-align:center}.film{width:126px;height:126px;border-radius:28px;background:var(--dark);position:relative;margin-bottom:24px;transform:rotate(-4deg);box-shadow:0 18px 40px rgba(0,0,0,.2)}.film:before{content:"";position:absolute;inset:15px;background:linear-gradient(135deg,#d5b3a6,#f1d7cd);border-radius:10px}.film:after{content:"ZA";position:absolute;right:12px;bottom:8px;color:white;font-weight:800}.countdown{font-size:32px;font-weight:800;letter-spacing:.05em;margin:12px 0}.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.photo{aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#eadfd9;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.photo span{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.55);color:white;font-size:10px;padding:5px 7px;border-radius:999px}.nav{display:flex;gap:8px;margin-top:auto;padding-top:18px}.nav button{flex:1;border:0;border-radius:14px;padding:12px;background:#eee2dc}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.stat{padding:16px;border-radius:18px;background:white;border:1px solid var(--line)}.stat b{display:block;font-size:28px}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field input{border:1px solid var(--line);background:white;border-radius:14px;padding:12px}.note{font-size:12px;background:#fff7e8;border:1px solid #f0dfbd;padding:10px;border-radius:12px}.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="app">
+<section id="welcome" class="screen hero active">
+  <div class="brand">ZA MOMENTS</div>
+  <div class="eyebrow">Disposable Wedding Camera</div>
+  <h1>Zaky<br>& Agnes</h1>
+  <p>7 Februari 2027 · Tangkap momen dari sudut pandangmu.</p>
+  <button class="btn primary" onclick="go('camera')">Start Capturing</button>
+</section>
+
+<section id="camera" class="screen">
+  <div class="topbar"><div><div class="muted" style="font-size:12px">WEDDING CAMERA</div><h2 class="title">Capture a moment</h2></div><div class="pill"><span id="shotsTop">12</span> left</div></div>
+  <div class="camera-wrap">
+    <video id="video" autoplay playsinline muted></video>
+    <canvas id="canvas" class="hidden"></canvas>
+    <div class="camera-overlay"><div><div class="small">ZAKY & AGNES</div><div>07 · 02 · 2027</div></div><div><div class="shots" id="shotsOverlay">12</div><div class="small">shots left</div></div></div>
+  </div>
+  <div class="camera-actions"><button class="iconbtn" onclick="toggleCamera()">↻</button><button class="shutter" onclick="takePhoto()" aria-label="Ambil foto"></button><button class="iconbtn" onclick="go('gallery')">▦</button></div>
+  <div class="note">Demo ini menyimpan foto di perangkat terlebih dahulu. Saat Supabase dihubungkan, setiap jepretan akan otomatis masuk ke event cloud.</div>
+</section>
+
+<section id="developing" class="screen develop">
+  <div class="film"></div>
+  <div class="muted" style="letter-spacing:.12em;text-transform:uppercase;font-size:12px">Your memories are developing</div>
+  <h2 class="title" style="margin-top:8px">See you after the celebration</h2>
+  <p class="muted">Foto dapat dikunci sampai waktu event selesai.</p>
+  <div id="countdown" class="countdown">--:--:--</div>
+  <button class="btn dark" onclick="go('gallery')">Preview Gallery Demo</button>
+</section>
+
+<section id="gallery" class="screen">
+  <div class="topbar"><div><div class="muted" style="font-size:12px">THE MEMORIES</div><h2 class="title">Wedding Gallery</h2></div><div class="pill" id="galleryCount">0 photos</div></div>
+  <div id="galleryGrid" class="gallery-grid"></div>
+  <div id="emptyGallery" class="card" style="text-align:center;margin-top:18px"><b>Belum ada foto</b><p class="muted">Ambil foto dari kamera ZA Moments.</p><button class="btn soft" onclick="go('camera')">Open Camera</button></div>
+  <div class="nav"><button onclick="go('camera')">Camera</button><button onclick="go('developing')">Developing</button><button onclick="go('admin')">Admin</button></div>
+</section>
+
+<section id="admin" class="screen">
+  <div><div class="muted" style="font-size:12px">ZA MOMENTS ADMIN</div><h2 class="title">Event Dashboard</h2></div>
+  <div class="admin-grid"><div class="stat"><span class="muted">Photos</span><b id="statPhotos">0</b></div><div class="stat"><span class="muted">Shots / guest</span><b>12</b></div></div>
+  <div class="card">
+    <div class="field"><label>Event name</label><input value="Wedding Zaky & Agnes"></div>
+    <div class="field"><label>Event date</label><input type="date" value="2027-02-07"></div>
+    <div class="field"><label>Gallery unlock</label><input type="datetime-local" value="2027-02-07T18:00"></div>
+    <div class="row"><button class="btn soft" onclick="alert('QR generator akan aktif saat URL event sudah dipasang.')">Generate QR</button><button class="btn dark" onclick="downloadAllDemo()">Download All</button></div>
+  </div>
+  <div class="note" style="margin-top:12px">Admin produksi nanti memakai Supabase Auth + RLS. Secret/service-role key tidak disimpan di frontend.</div>
+  <div class="nav"><button onclick="go('welcome')">Home</button><button onclick="go('gallery')">Gallery</button></div>
+</section>
+</div>
+<script>
+let stream=null, facing='environment', shots=Number(localStorage.getItem('za_shots')||12); const MAX=12;
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='camera')startCamera();if(id==='gallery')renderGallery();}
+function updateShots(){document.getElementById('shotsTop').textContent=shots;document.getElementById('shotsOverlay').textContent=shots;localStorage.setItem('za_shots',shots)}
+async function startCamera(){try{if(stream)stream.getTracks().forEach(t=>t.stop());stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:facing}},audio:false});document.getElementById('video').srcObject=stream}catch(e){alert('Kamera tidak bisa dibuka. Pastikan izin kamera aktif dan halaman menggunakan HTTPS.')}}
+async function toggleCamera(){facing=facing==='environment'?'user':'environment';await startCamera()}
+function takePhoto(){if(shots<=0){go('developing');return} const v=document.getElementById('video'),c=document.getElementById('canvas'); if(!v.videoWidth){alert('Kamera belum siap.');return} c.width=v.videoWidth;c.height=v.videoHeight;const x=c.getContext('2d');if(facing==='user'){x.translate(c.width,0);x.scale(-1,1)}x.drawImage(v,0,0,c.width,c.height); const data=c.toDataURL('image/jpeg',.82); const photos=JSON.parse(localStorage.getItem('za_photos')||'[]');photos.unshift({id:Date.now(),src:data,at:new Date().toISOString()});localStorage.setItem('za_photos',JSON.stringify(photos.slice(0,24)));shots--;updateShots(); if(shots<=0)go('developing')}
+function renderGallery(){const photos=JSON.parse(localStorage.getItem('za_photos')||'[]');const grid=document.getElementById('galleryGrid');grid.innerHTML='';photos.forEach((p,i)=>{const d=document.createElement('div');d.className='photo';d.innerHTML=`<img src="${p.src}" alt="Moment ${i+1}"><span>#${photos.length-i}</span>`;grid.appendChild(d)});document.getElementById('galleryCount').textContent=`${photos.length} photos`;document.getElementById('statPhotos').textContent=photos.length;document.getElementById('emptyGallery').classList.toggle('hidden',photos.length>0)}
+function downloadAllDemo(){const photos=JSON.parse(localStorage.getItem('za_photos')||'[]');if(!photos.length){alert('Belum ada foto.');return}photos.forEach((p,i)=>{const a=document.createElement('a');a.href=p.src;a.download=`ZA-Moment-${i+1}.jpg`;a.click()})}
+function tick(){const target=new Date('2027-02-07T18:00:00+08:00').getTime(),d=target-Date.now();if(d<=0){document.getElementById('countdown').textContent='GALLERY OPEN';return}const days=Math.floor(d/86400000),h=Math.floor(d%86400000/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);document.getElementById('countdown').textContent=`${days}d ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
+updateShots();renderGallery();tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
