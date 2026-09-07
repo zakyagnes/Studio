@@ -1,82 +1,296 @@
-<!doctype html>
-<html lang="id">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>ZA Moments — Disposable Wedding Camera</title>
-<meta name="theme-color" content="#f6efe9" />
-<style>
-:root{--bg:#f6efe9;--card:#fffaf6;--ink:#2d2623;--muted:#7f746f;--accent:#d8a9b2;--line:#eadbd4;--dark:#1f1b19;--ok:#5b7f68}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
-button,input{font:inherit}button{cursor:pointer}.app{max-width:430px;margin:0 auto;min-height:100dvh;background:linear-gradient(180deg,#fffaf7 0%,#f6efe9 100%);position:relative;overflow:hidden}
-.screen{display:none;min-height:100dvh;padding:20px}.screen.active{display:flex;flex-direction:column}.hero{justify-content:flex-end;padding:26px;background:linear-gradient(180deg,rgba(30,20,20,.05),rgba(30,20,20,.62)),url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80') center/cover}
-.brand{position:absolute;top:22px;left:24px;color:white;font-weight:700;letter-spacing:.08em}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:#f8e9e2}.hero h1{font-family:Georgia,serif;font-size:44px;line-height:.95;margin:10px 0 12px;color:white}.hero p{color:#f8ece6;margin:0 0 22px}.btn{border:0;border-radius:18px;padding:15px 18px;font-weight:700}.btn.primary{background:white;color:var(--dark)}.btn.dark{background:var(--dark);color:white}.btn.soft{background:#f1dfdf;color:#5d4349}.row{display:flex;gap:10px}.row>*{flex:1}
-.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.pill{background:#f1e7e2;border:1px solid var(--line);padding:8px 12px;border-radius:999px;font-size:13px}.title{font-family:Georgia,serif;font-size:28px;margin:0}.muted{color:var(--muted)}
-.camera-wrap{background:#111;border-radius:28px;overflow:hidden;position:relative;aspect-ratio:3/4;box-shadow:0 18px 50px rgba(40,24,20,.18)}video,canvas.preview{width:100%;height:100%;object-fit:cover}.camera-overlay{position:absolute;inset:auto 0 0;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.6));color:white;display:flex;justify-content:space-between;align-items:end}.shots{font-weight:800;font-size:22px}.small{font-size:12px;opacity:.8}.camera-actions{display:flex;justify-content:center;align-items:center;gap:26px;padding:22px 0}.shutter{width:74px;height:74px;border-radius:50%;background:white;border:7px solid #ded6d1;box-shadow:0 0 0 2px #fff}.iconbtn{width:46px;height:46px;border-radius:50%;border:0;background:#eadfd9}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 10px 30px rgba(54,33,25,.06)}
-.develop{justify-content:center;align-items:center;text-align:center}.film{width:126px;height:126px;border-radius:28px;background:var(--dark);position:relative;margin-bottom:24px;transform:rotate(-4deg);box-shadow:0 18px 40px rgba(0,0,0,.2)}.film:before{content:"";position:absolute;inset:15px;background:linear-gradient(135deg,#d5b3a6,#f1d7cd);border-radius:10px}.film:after{content:"ZA";position:absolute;right:12px;bottom:8px;color:white;font-weight:800}.countdown{font-size:32px;font-weight:800;letter-spacing:.05em;margin:12px 0}.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.photo{aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#eadfd9;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.photo span{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.55);color:white;font-size:10px;padding:5px 7px;border-radius:999px}.nav{display:flex;gap:8px;margin-top:auto;padding-top:18px}.nav button{flex:1;border:0;border-radius:14px;padding:12px;background:#eee2dc}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.stat{padding:16px;border-radius:18px;background:white;border:1px solid var(--line)}.stat b{display:block;font-size:28px}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field input{border:1px solid var(--line);background:white;border-radius:14px;padding:12px}.note{font-size:12px;background:#fff7e8;border:1px solid #f0dfbd;padding:10px;border-radius:12px}.hidden{display:none!important}
-</style>
-</head>
-<body>
-<div class="app">
-<section id="welcome" class="screen hero active">
-  <div class="brand">ZA MOMENTS</div>
-  <div class="eyebrow">Disposable Wedding Camera</div>
-  <h1>Zaky<br>& Agnes</h1>
-  <p>7 Februari 2027 · Tangkap momen dari sudut pandangmu.</p>
-  <button class="btn primary" onclick="go('camera')">Start Capturing</button>
-</section>
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f3efe5"><meta name="apple-mobile-web-app-capable" content="yes"><title>ZA Moments V3.2 — Themed Digital Disposable Camera</title><style>
+:root{--paper:#f3efe5;--paper2:#fbf8f1;--ink:#151515;--muted:#716d64;--blue:#3548e5;--yellow:#f2d34f;--pink:#e8c1ca;--green:#b9f48b;--line:#d4cdc0;--white:#fff;--black:#101010;--danger:#bd2b2b;--shadow:0 24px 70px rgba(20,20,20,.13)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.serif{font-family:Georgia,"Times New Roman",serif}.shell{max-width:1180px;margin:auto;padding:0 22px}.muted{color:var(--muted)}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.hide{display:none!important}
+.noise:before{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.nav{position:sticky;top:0;z-index:50;background:rgba(243,239,229,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,.08)}.navin{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.03em}.brandicon{width:35px;height:27px;border:2px solid;border-radius:6px;position:relative;transform:rotate(-3deg)}.brandicon:before{content:"";position:absolute;width:11px;height:11px;border:2px solid;border-radius:50%;left:9px;top:6px}.brandicon:after{content:"";position:absolute;width:7px;height:4px;border-radius:2px;background:currentColor;right:4px;top:4px}.navlinks{display:flex;gap:24px;font-size:13px;font-weight:700}.navbtn,.btn{border:1.5px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:12px 18px;font-weight:800;transition:.2s}.btn:hover,.navbtn:hover{transform:translateY(-2px)}.btn.light{background:transparent;color:var(--ink)}.btn.yellow{background:var(--yellow);color:var(--ink)}
+.hero{padding:72px 0 60px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}.hero h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(58px,7.6vw,106px);line-height:.87;letter-spacing:-.06em;margin:15px 0 28px}.hero h1 em{font-weight:500;color:var(--blue)}.hero p{max-width:545px;font-size:18px;line-height:1.58}.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}.micro{font-size:12px;color:var(--muted);margin-top:12px}.stage{min-height:650px;display:grid;place-items:center;position:relative}.blob{position:absolute;width:540px;height:540px;background:var(--yellow);border-radius:44% 56% 53% 47%/47% 43% 57% 53%;transform:rotate(-7deg);animation:morph 8s ease-in-out infinite alternate}@keyframes morph{to{transform:rotate(5deg);border-radius:57% 43% 46% 54%/55% 58% 42% 45%}}.phone{width:306px;height:626px;border:9px solid #262626;background:#111;border-radius:46px;box-shadow:0 38px 90px rgba(0,0,0,.28);overflow:hidden;position:relative;z-index:3;transform:rotate(4deg)}.notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:94px;height:25px;background:#090909;border-radius:20px;z-index:5}.phonescreen{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=86') center/cover;color:#fff;padding:46px 18px 22px;display:flex;flex-direction:column}.phonehead{display:flex;justify-content:space-between;font-size:10px;font-weight:800;letter-spacing:.08em}.phonebottom{margin-top:auto;text-align:center}.phonebottom h3{font-family:Georgia,serif;font-size:24px;margin:0 0 8px}.pill{display:inline-flex;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);padding:7px 10px;border-radius:999px;font-size:11px}.shutterdemo{width:75px;height:75px;border:5px solid #fff;border-radius:50%;margin:15px auto 0;box-shadow:inset 0 0 0 5px rgba(255,255,255,.25)}.float{position:absolute;z-index:4;border:1px solid var(--ink);background:var(--paper2);border-radius:13px;box-shadow:8px 8px 0 var(--ink);padding:14px 16px;font-size:12px;animation:float 4s ease-in-out infinite}.float b{font-size:18px;display:block}.f1{right:0;top:88px;transform:rotate(5deg)}.f2{left:0;bottom:92px;transform:rotate(-5deg);animation-delay:-2s}@keyframes float{50%{translate:0 -8px}}
+.marquee{overflow:hidden;border-top:1px solid;border-bottom:1px solid;background:var(--blue);color:#fff;white-space:nowrap;padding:13px 0}.track{display:inline-block;animation:move 20s linear infinite}.track span{font-size:12px;font-weight:900;letter-spacing:.1em;margin-right:38px}@keyframes move{to{transform:translateX(-50%)}}
+.section{padding:96px 0}.alt{background:var(--paper2)}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.sectionhead h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(42px,6vw,74px);line-height:.94;letter-spacing:-.045em;margin:10px 0 0;max-width:780px}.sectionhead p{max-width:390px;line-height:1.62}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{min-height:320px;border:1px solid;border-radius:25px;padding:28px;display:flex;flex-direction:column;overflow:hidden;position:relative}.step:nth-child(1){background:var(--yellow)}.step:nth-child(2){background:var(--blue);color:#fff}.step:nth-child(3){background:var(--pink)}.step h3{font-family:Georgia,serif;font-size:34px;font-weight:500;margin:16px 0 10px}.step p{line-height:1.55;max-width:320px}.stepart{height:110px;margin-top:auto;position:relative}.qrart{width:88px;height:88px;background:repeating-conic-gradient(#111 0 25%,transparent 0 50%) 50%/18px 18px;border:8px solid #fff;box-shadow:4px 4px 0 #111}.camart{position:absolute;right:0;bottom:0;width:175px;height:92px;border:2px solid currentColor;border-radius:14px}.camart:before{content:"";position:absolute;width:52px;height:52px;border:7px solid currentColor;border-radius:50%;left:57px;top:16px}.film{display:flex;gap:8px;position:absolute;bottom:0}.film i{display:block;width:69px;height:88px;border:6px solid #111;background:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=260&q=78') center/cover}.film i:nth-child(2){transform:rotate(5deg);background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=260&q=78')}
+.features{display:grid;grid-template-columns:1.06fr .94fr;gap:22px}.featurehero{background:var(--black);color:#fff;border-radius:30px;padding:38px;min-height:530px;position:relative;overflow:hidden}.featurehero h3{font-family:Georgia,serif;font-weight:500;font-size:50px;line-height:1.02;margin:16px 0}.featurehero p{max-width:470px;line-height:1.65;color:#c6c6c6}.reel{position:absolute;width:310px;height:310px;border:45px solid var(--yellow);border-radius:50%;right:-80px;bottom:-85px}.reel:before{content:"";position:absolute;inset:46px;border:20px dotted #111;border-radius:50%}.featuregrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.feat{border:1px solid;border-radius:24px;padding:23px;min-height:250px;background:var(--paper2)}.feat:nth-child(2){background:#dbe6ff}.feat:nth-child(3){background:#e8e0d5}.feat:nth-child(4){background:#c9eed8}.feat b{font-size:28px}.feat h4{font-family:Georgia,serif;font-weight:500;font-size:26px;margin:18px 0 8px}.feat p{font-size:14px;line-height:1.55;color:#55514a}
+.demo{background:var(--blue);color:#fff;padding:100px 0}.demogrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}.demogrid h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(50px,7vw,88px);line-height:.89;letter-spacing:-.05em;margin:10px 0 24px}.demogrid p{line-height:1.65;color:#e6e8ff;max-width:480px}.cameraProduct{width:min(100%,550px);aspect-ratio:1.48;background:#efeee8;border:3px solid #111;border-radius:34px;box-shadow:14px 14px 0 #111;position:relative;padding:28px;color:#111;transform:rotate(-2deg)}.cpbrand{font-weight:950;font-size:19px}.cpsub{font-size:10px;letter-spacing:.14em}.lens{position:absolute;width:175px;height:175px;border-radius:50%;background:#111;border:18px solid #333;left:50%;top:50%;transform:translate(-50%,-42%);box-shadow:inset 0 0 0 8px #090909,inset 0 0 0 27px #24263e}.flash{position:absolute;width:73px;height:39px;background:#eee4c1;border:4px solid #111;right:30px;top:29px}.counter{position:absolute;right:35px;bottom:33px;background:#111;color:#fff;padding:8px 12px;border-radius:4px;font-weight:900}.view{position:absolute;width:47px;height:30px;background:#111;border:5px solid #444;left:35px;top:78px}.winder{position:absolute;width:47px;height:17px;background:#111;border-radius:5px;left:35px;bottom:34px}.onlinebadge{position:absolute;left:30px;bottom:75px;font-size:11px;font-weight:800}.onlinebadge span{display:inline-block;width:8px;height:8px;background:#56d65a;border-radius:50%;margin-right:6px}
+.footer{padding:56px 0;border-top:1px solid}.footerin{display:flex;justify-content:space-between;align-items:end;gap:30px}.footer h3{font-family:Georgia,serif;font-size:34px;font-weight:500;margin:18px 0 0}.footer small{color:var(--muted)}
+/* modal app */
+.appmodal{position:fixed;inset:0;background:rgba(10,10,10,.7);z-index:100;display:none;place-items:center;padding:18px;backdrop-filter:blur(10px)}.appmodal.open{display:grid}.appbox{width:min(100%,430px);height:min(860px,calc(100dvh - 28px));background:#111;border-radius:34px;overflow:hidden;position:relative;box-shadow:0 30px 100px rgba(0,0,0,.45)}.closeapp{position:absolute;right:13px;top:13px;z-index:50;width:39px;height:39px;border:0;border-radius:50%;background:rgba(0,0,0,.48);color:#fff;font-size:24px;backdrop-filter:blur(8px)}.appscreen{display:none;width:100%;height:100%;overflow:auto}.appscreen.active{display:block}.eventhome{background:#efe9dd;padding:62px 22px 24px}.eventhead{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:900;letter-spacing:.13em}.eventtitle{font-family:Georgia,serif;font-size:57px;line-height:.82;letter-spacing:-.05em;margin:48px 0 12px}.eventdate{font-size:10px;font-weight:800;letter-spacing:.12em;color:#686057}.disposable{height:270px;border:2px solid #111;background:#dad9d2;border-radius:22px;position:relative;margin:30px 0 24px;box-shadow:9px 9px 0 #111;overflow:hidden}.dispbrand{position:absolute;left:20px;top:19px;font-weight:950;font-size:22px}.dispsub{position:absolute;left:20px;top:48px;font-size:8px;letter-spacing:.15em}.displens{position:absolute;width:115px;height:115px;border:14px solid #333;background:#111;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-38%);box-shadow:inset 0 0 0 6px #060606,inset 0 0 0 21px #292a42}.dispflash{position:absolute;width:59px;height:31px;border:3px solid #111;background:#eee5c5;right:19px;top:20px}.dispview{position:absolute;width:40px;height:25px;background:#111;left:20px;top:77px}.dispcount{position:absolute;right:22px;bottom:20px;background:#111;color:#fff;font-weight:900;padding:7px 10px}.startcapture{width:100%;border:0;background:var(--blue);color:#fff;border-radius:999px;padding:16px;font-weight:900;letter-spacing:.06em}.eventactions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.eventactions button{border:1px solid #111;background:transparent;border-radius:999px;padding:12px;font-weight:800;font-size:12px}.lockline{text-align:center;font-size:10px;color:#6a6259;margin-top:15px}
+.cameraScreen{position:relative;background:#050505;overflow:hidden}.cameraVideo,.camerafallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:radial-gradient(circle at 50% 38%,#3d3d3d,#0a0a0a 70%)}.camui{position:absolute;inset:0;color:#fff;display:flex;flex-direction:column;padding:17px;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent 27%,transparent 63%,rgba(0,0,0,.75))}.camt{display:flex;justify-content:space-between;align-items:center}.circlebtn{width:42px;height:42px;border:1px solid rgba(255,255,255,.55);background:rgba(0,0,0,.35);color:#fff;border-radius:50%;backdrop-filter:blur(8px)}.camevent{text-align:center;font-size:10px;font-weight:900;letter-spacing:.1em}.camb{margin-top:auto}.cammeta{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}.cammeta b{font-size:30px}.shutterrow{display:grid;grid-template-columns:56px 1fr 56px;align-items:center}.shutter{width:82px;height:82px;border:6px solid #fff;background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 5px rgba(255,255,255,.2);border-radius:50%;justify-self:center}.shotthumb{width:47px;height:58px;border:2px solid rgba(255,255,255,.75);background:#222;overflow:hidden}.shotthumb img{width:100%;height:100%;object-fit:cover}.toast{position:absolute;left:50%;bottom:150px;transform:translate(-50%,15px);opacity:0;background:#fff;color:#111;padding:10px 15px;border-radius:999px;font-size:11px;font-weight:800;transition:.22s;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
+.developing{background:#efe9dd;padding:78px 24px 28px;text-align:center}.filmanim{width:210px;height:150px;margin:30px auto;border:2px solid #111;border-radius:18px;background:#111;position:relative;overflow:hidden;box-shadow:8px 8px 0 var(--yellow)}.filmanim:before{content:"";position:absolute;width:150px;height:185px;background:linear-gradient(145deg,#d7c2ad,#75665a 45%,#292621);left:30px;top:-110px;animation:develop 4s ease-in-out infinite alternate;filter:saturate(.7) contrast(1.05)}@keyframes develop{to{top:15px}}.developing h3{font-family:Georgia,serif;font-size:43px;font-weight:500;line-height:.98}.devcount{font-size:28px;font-weight:900;letter-spacing:-.03em;margin:25px 0}.developing .btn{width:100%}
+.galleryapp{background:#111;color:#fff}.galleryhero{padding:64px 20px 18px}.galleryhero h3{font-family:Georgia,serif;font-weight:500;font-size:47px;line-height:.9;margin:8px 0}.galleryactions{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}.galleryactions button{border:1px solid #555;background:#1b1b1b;color:#fff;border-radius:999px;padding:9px 12px;font-size:10px;font-weight:800}.gallerygrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px}.gphoto{aspect-ratio:.82;background:#222;position:relative;overflow:hidden}.gphoto img{width:100%;height:100%;object-fit:cover}.gphoto small{position:absolute;left:7px;bottom:7px;background:rgba(0,0,0,.55);padding:4px 6px;border-radius:6px;font-size:8px}.empty{grid-column:1/-1;padding:50px 20px;text-align:center;color:#aaa}
+.adminlink{position:absolute;left:15px;top:15px;color:#fff;background:#111;border:1px solid #444;border-radius:999px;padding:8px 11px;font-size:10px;font-weight:800;z-index:5}
+.statusdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:#e6ad45}.statusdot.online{background:#57cf61}
 
-<section id="camera" class="screen">
-  <div class="topbar"><div><div class="muted" style="font-size:12px">WEDDING CAMERA</div><h2 class="title">Capture a moment</h2></div><div class="pill"><span id="shotsTop">12</span> left</div></div>
-  <div class="camera-wrap">
-    <video id="video" autoplay playsinline muted></video>
-    <canvas id="canvas" class="hidden"></canvas>
-    <div class="camera-overlay"><div><div class="small">ZAKY & AGNES</div><div>07 · 02 · 2027</div></div><div><div class="shots" id="shotsOverlay">12</div><div class="small">shots left</div></div></div>
-  </div>
-  <div class="camera-actions"><button class="iconbtn" onclick="toggleCamera()">↻</button><button class="shutter" onclick="takePhoto()" aria-label="Ambil foto"></button><button class="iconbtn" onclick="go('gallery')">▦</button></div>
-  <div class="note">Demo ini menyimpan foto di perangkat terlebih dahulu. Saat Supabase dihubungkan, setiap jepretan akan otomatis masuk ke event cloud.</div>
-</section>
+/* V3.2 — baked photo themes */
+.themechooser{margin:0 0 12px;padding:10px 0 2px}
+.themelabel{display:flex;justify-content:space-between;align-items:center;font-size:9px;font-weight:900;letter-spacing:.12em;margin-bottom:8px;color:rgba(255,255,255,.78)}
+.themelabel span{letter-spacing:0;text-transform:none;font-size:10px;color:#fff}
+.themechips{display:flex;gap:7px;overflow-x:auto;padding:1px 1px 5px;scrollbar-width:none}
+.themechips::-webkit-scrollbar{display:none}
+.themechip{flex:0 0 auto;border:1px solid rgba(255,255,255,.38);background:rgba(0,0,0,.28);color:#fff;border-radius:999px;padding:8px 10px;font-size:9px;font-weight:850;backdrop-filter:blur(10px)}
+.themechip.active{background:#fff;color:#111;border-color:#fff}
+.framePreview{pointer-events:none;position:absolute;inset:76px 15px 185px;border-radius:3px;z-index:1;transition:.2s;overflow:hidden}
+.framePreview:before,.framePreview:after{content:"";position:absolute}
+.framePreviewText{position:absolute;z-index:2;text-align:center;left:10px;right:10px;bottom:10px;font-family:Georgia,serif;font-size:14px;letter-spacing:.02em}
+.framePreviewText small{display:block;font-family:Inter,system-ui,sans-serif;font-size:7px;letter-spacing:.14em;margin-top:2px}
+.framePreview.theme-elegant{border:1px solid rgba(245,236,214,.8);box-shadow:inset 0 0 0 5px rgba(245,236,214,.12)}
+.framePreview.theme-elegant:after{left:0;right:0;bottom:0;height:58px;background:linear-gradient(transparent,rgba(38,24,18,.72))}
+.framePreview.theme-elegant .framePreviewText{color:#f7ecd8}
+.framePreview.theme-vintage{border:7px solid rgba(17,17,17,.72)}
+.framePreview.theme-vintage:before{inset:0;background:radial-gradient(circle,transparent 54%,rgba(0,0,0,.35))}
+.framePreview.theme-vintage .framePreviewText{left:14px;right:auto;text-align:left;color:#f2cf7a;font-family:monospace;font-size:11px}
+.framePreview.theme-polaroid{border:10px solid rgba(248,247,242,.94);border-bottom-width:50px}
+.framePreview.theme-polaroid .framePreviewText{bottom:-38px;color:#171717;font-size:13px}
+.framePreview.theme-javanese{border:2px solid rgba(224,183,93,.9);box-shadow:inset 0 0 0 5px rgba(86,16,25,.28)}
+.framePreview.theme-javanese:after{left:0;right:0;bottom:0;height:64px;background:linear-gradient(transparent,rgba(79,13,24,.86))}
+.framePreview.theme-javanese .framePreviewText{color:#efd18b}
+.framePreview.theme-clean{border:1px solid rgba(255,255,255,.85)}
+.framePreview.theme-clean:after{left:0;right:0;bottom:0;height:45px;background:rgba(255,255,255,.92)}
+.framePreview.theme-clean .framePreviewText{color:#111;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:800;bottom:14px}
+@media(max-height:720px){.framePreview{inset:70px 13px 205px}.themechip{padding:7px 9px}.themechooser{margin-bottom:6px}.cammeta{margin-bottom:8px}}
 
-<section id="developing" class="screen develop">
-  <div class="film"></div>
-  <div class="muted" style="letter-spacing:.12em;text-transform:uppercase;font-size:12px">Your memories are developing</div>
-  <h2 class="title" style="margin-top:8px">See you after the celebration</h2>
-  <p class="muted">Foto dapat dikunci sampai waktu event selesai.</p>
-  <div id="countdown" class="countdown">--:--:--</div>
-  <button class="btn dark" onclick="go('gallery')">Preview Gallery Demo</button>
-</section>
+@media(max-width:860px){.navlinks{display:none}.hero{padding-top:42px}.hero-grid,.features,.demogrid{grid-template-columns:1fr}.hero-grid{gap:20px}.stage{min-height:560px}.blob{width:430px;height:430px}.phone{width:278px;height:570px}.steps{grid-template-columns:1fr}.sectionhead{display:block}.sectionhead p{margin-top:20px}.featurehero{min-height:440px}.featuregrid{grid-template-columns:1fr 1fr}.footerin{display:block}.footer small{display:block;margin-top:30px}.demo{padding:80px 0}}
+@media(max-width:520px){.shell{padding:0 16px}.hero h1{font-size:58px}.hero p{font-size:16px}.stage{min-height:510px}.blob{width:370px;height:370px}.phone{width:250px;height:510px;border-radius:38px}.float{font-size:10px;padding:11px}.f1{right:-4px}.f2{left:-4px}.section{padding:72px 0}.featuregrid{grid-template-columns:1fr}.cameraProduct{transform:none}.appmodal{padding:0}.appbox{height:100dvh;border-radius:0;max-width:none}.closeapp{top:calc(10px + env(safe-area-inset-top));right:10px}.eventhome{padding-top:calc(58px + env(safe-area-inset-top))}.cameraScreen{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}}
 
-<section id="gallery" class="screen">
-  <div class="topbar"><div><div class="muted" style="font-size:12px">THE MEMORIES</div><h2 class="title">Wedding Gallery</h2></div><div class="pill" id="galleryCount">0 photos</div></div>
-  <div id="galleryGrid" class="gallery-grid"></div>
-  <div id="emptyGallery" class="card" style="text-align:center;margin-top:18px"><b>Belum ada foto</b><p class="muted">Ambil foto dari kamera ZA Moments.</p><button class="btn soft" onclick="go('camera')">Open Camera</button></div>
-  <div class="nav"><button onclick="go('camera')">Camera</button><button onclick="go('developing')">Developing</button><button onclick="go('admin')">Admin</button></div>
-</section>
+</style><script>
+window.ZA_CONFIG = {
+  SUPABASE_URL: "PASTE_SUPABASE_PROJECT_URL_HERE",
+  SUPABASE_ANON_KEY: "PASTE_SUPABASE_ANON_KEY_HERE",
+  DEFAULT_EVENT_SLUG: "zaky-agnes-2027",
+  BRAND: "ZA Moments"
+};
 
-<section id="admin" class="screen">
-  <div><div class="muted" style="font-size:12px">ZA MOMENTS ADMIN</div><h2 class="title">Event Dashboard</h2></div>
-  <div class="admin-grid"><div class="stat"><span class="muted">Photos</span><b id="statPhotos">0</b></div><div class="stat"><span class="muted">Shots / guest</span><b>12</b></div></div>
-  <div class="card">
-    <div class="field"><label>Event name</label><input value="Wedding Zaky & Agnes"></div>
-    <div class="field"><label>Event date</label><input type="date" value="2027-02-07"></div>
-    <div class="field"><label>Gallery unlock</label><input type="datetime-local" value="2027-02-07T18:00"></div>
-    <div class="row"><button class="btn soft" onclick="alert('QR generator akan aktif saat URL event sudah dipasang.')">Generate QR</button><button class="btn dark" onclick="downloadAllDemo()">Download All</button></div>
-  </div>
-  <div class="note" style="margin-top:12px">Admin produksi nanti memakai Supabase Auth + RLS. Secret/service-role key tidak disimpan di frontend.</div>
-  <div class="nav"><button onclick="go('welcome')">Home</button><button onclick="go('gallery')">Gallery</button></div>
-</section>
-</div>
+</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head><body class="noise">
+<nav class="nav"><div class="shell navin"><a class="brand" href="#"><span class="brandicon"></span>ZA MOMENTS</a><div class="navlinks"><a href="#how">Cara kerja</a><a href="#features">Fitur</a><a href="#demo">Demo</a></div><button class="navbtn" onclick="openEvent()">Coba Kamera</button></div></nav>
+<header class="hero"><div class="shell hero-grid"><div><div class="eyebrow">DIGITAL DISPOSABLE CAMERA · WEDDING EDITION</div><h1>Every guest.<br>Every angle.<br><em>One story.</em></h1><p>QR camera untuk acara tanpa install aplikasi. Tamu tinggal scan, ambil foto dari sudut mereka, lalu semua momen berkembang menjadi satu album bersama.</p><div class="actions"><button class="btn" onclick="openEvent()">Buka Event Zaky & Agnes</button><a class="btn light" href="#how">Lihat cara kerja</a></div><div class="micro"><span id="modeDot" class="statusdot"></span><span id="modeText">Checking connection…</span></div></div><div class="stage"><div class="blob"></div><div class="phone"><div class="notch"></div><div class="phonescreen"><div class="phonehead"><span>ZA MOMENTS</span><span>12 SHOTS</span></div><div class="phonebottom"><h3>Zaky & Agnes</h3><span class="pill">07 FEB 2027 · MUARA BADAK</span><div class="shutterdemo"></div></div></div></div><div class="float f1"><b>12 shots</b>per guest</div><div class="float f2"><b>1 shared film</b>all guests</div></div></div></header>
+<div class="marquee"><div class="track"><span>SCAN QR · NO APP · TAKE PHOTOS · NO RETAKES · DELAYED REVEAL · ONE SHARED GALLERY · </span><span>SCAN QR · NO APP · TAKE PHOTOS · NO RETAKES · DELAYED REVEAL · ONE SHARED GALLERY · </span></div></div>
+<section id="how" class="section"><div class="shell"><div class="sectionhead"><div><div class="eyebrow">HOW IT WORKS</div><h2>Disposable-camera feeling, tanpa bagi-bagi kamera.</h2></div><p class="muted">Satu QR untuk seluruh tamu. Setiap browser mendapatkan identitas tamu dan jatah foto sendiri.</p></div><div class="steps"><article class="step"><div class="eyebrow">01 · ENTER</div><h3>Scan QR</h3><p>QR membawa tamu langsung ke event. Tidak perlu akun dan tidak perlu install aplikasi.</p><div class="stepart"><div class="qrart"></div></div></article><article class="step"><div class="eyebrow">02 · CAPTURE</div><h3>Take the moment</h3><p>Kamera full-screen, pilihan depan/belakang, counter jepretan dan pengalaman “no retakes”.</p><div class="stepart"><div class="camart"></div></div></article><article class="step"><div class="eyebrow">03 · REVEAL</div><h3>Develop together</h3><p>Foto terkumpul ke satu album dan baru dibuka sesuai waktu reveal yang ditentukan admin.</p><div class="stepart"><div class="film"><i></i><i></i></div></div></article></div></div></section>
+<section id="features" class="section alt"><div class="shell"><div class="features"><div class="featurehero"><div class="eyebrow">ZA MOMENTS V3</div><h3>Now built for a real shared event.</h3><p>V3 bukan sekadar simulasi lokal. Saat Supabase dikonfigurasi, upload kamera dari banyak HP masuk ke satu database dan storage event.</p><div class="reel"></div></div><div class="featuregrid"><article class="feat"><b>◎</b><h4>Guest ID</h4><p>Jatah foto dihitung per browser/tamu, bukan satu counter global.</p></article><article class="feat"><b>☁</b><h4>Cloud Upload</h4><p>Foto disimpan ke Supabase Storage dan metadata ke database.</p></article><article class="feat"><b>◷</b><h4>Delayed Reveal</h4><p>Galeri punya countdown dan status locked sampai waktu yang dipilih.</p></article><article class="feat"><b>⌘</b><h4>Admin Control</h4><p>Event, shots, reveal, QR, hapus foto dan download album dari dashboard admin.</p></article></div></div></div></section>
+<section id="demo" class="demo"><div class="shell demogrid"><div><div class="eyebrow">LIVE INTERACTION</div><h2>Try the wedding film.</h2><p>Buka event, izinkan kamera, lalu ambil foto seperti tamu sungguhan. Di Demo Mode foto tetap tersimpan lokal; setelah Supabase aktif foto masuk ke cloud.</p><button class="btn yellow" onclick="openEvent()">OPEN CAMERA EXPERIENCE</button></div><div class="cameraProduct"><div class="cpbrand">ZA MOMENTS</div><div class="cpsub">DIGITAL DISPOSABLE · WEDDING FILM</div><div class="view"></div><div class="flash"></div><div class="lens"></div><div class="onlinebadge"><span></span>CLOUD READY</div><div class="winder"></div><div class="counter">12</div></div></div></section>
+<footer class="footer"><div class="shell footerin"><div><div class="brand"><span class="brandicon"></span>ZA MOMENTS</div><h3>Every angle matters.</h3></div><small>V3.2 · Zaky & Agnes · 7 February 2027</small></div></footer>
+
+<div id="appModal" class="appmodal" aria-hidden="true"><div class="appbox"><button class="closeapp" onclick="closeEvent()">×</button>
+<section id="screen-event" class="appscreen eventhome active"><div class="eventhead"><span>ZA MOMENTS</span><span><span id="eventShotsTop">12</span> SHOTS</span></div><div id="eventTitle" class="eventtitle">Zaky<br>& Agnes</div><div id="eventDate" class="eventdate">07 FEBRUARI 2027 · MUARA BADAK</div><div class="disposable"><div class="dispbrand">ZA</div><div class="dispsub">DIGITAL DISPOSABLE</div><div class="dispview"></div><div class="dispflash"></div><div class="displens"></div><div id="eventShotsCamera" class="dispcount">12</div></div><button id="startButton" class="startcapture" onclick="goScreen('camera')">OPEN CAMERA</button><div class="eventactions"><button onclick="openGallery()">VIEW FILM</button><button onclick="shareEvent()">SHARE EVENT</button></div><div id="lockLine" class="lockline">◷ Gallery reveals after the celebration</div></section>
+<section id="screen-camera" class="appscreen cameraScreen"><video id="cameraVideo" class="cameraVideo" autoplay playsinline muted></video><div id="cameraFallback" class="camerafallback"></div><canvas id="captureCanvas" hidden></canvas><div id="framePreview" class="framePreview theme-elegant"><div class="framePreviewText">Zaky & Agnes<small>07 · 02 · 2027</small></div></div><div class="camui"><div class="camt"><button class="circlebtn" onclick="goScreen('event')">‹</button><div class="camevent">ZAKY & AGNES<br><span style="opacity:.65">07.02.2027</span></div><button id="flashButton" class="circlebtn" onclick="toggleFlash()">⚡</button></div><div class="camb"><div class="themechooser"><div class="themelabel">PHOTO THEME <span id="themeName">Wedding Elegant</span></div><div class="themechips"><button class="themechip active" data-theme="elegant" onclick="setPhotoTheme('elegant')">Elegant</button><button class="themechip" data-theme="vintage" onclick="setPhotoTheme('vintage')">Vintage Film</button><button class="themechip" data-theme="polaroid" onclick="setPhotoTheme('polaroid')">Polaroid</button><button class="themechip" data-theme="javanese" onclick="setPhotoTheme('javanese')">Javanese</button><button class="themechip" data-theme="clean" onclick="setPhotoTheme('clean')">Clean</button></div></div><div class="cammeta"><div><div style="font-size:10px;opacity:.7">DIGITAL FILM</div><b><span id="cameraShots">12</span><span style="font-size:13px;font-weight:500"> left</span></b></div><div style="font-size:10px;text-align:right;opacity:.75">THEME BAKED IN<br>NO RETAKES</div></div><div class="shutterrow"><div id="lastThumb" class="shotthumb"></div><button id="shutterButton" class="shutter" onclick="takePhoto()" aria-label="Ambil foto"></button><button class="circlebtn" onclick="switchCamera()">↻</button></div></div></div><div id="toast" class="toast">Moment saved · theme applied</div></section>
+<section id="screen-develop" class="appscreen developing"><div class="filmanim"></div><div class="eyebrow">YOUR FILM IS DEVELOPING</div><h3>See every moment<br>after the party.</h3><p class="muted">Semua foto tamu dikumpulkan menjadi satu album.</p><div id="developCountdown" class="devcount">--:--:--</div><button id="developButton" class="btn" onclick="openGallery()">CHECK GALLERY</button></section>
+<section id="screen-gallery" class="appscreen galleryapp"><div class="galleryhero"><div class="eyebrow" style="color:#999">THE WEDDING FILM</div><h3 id="galleryTitle">Zaky & Agnes</h3><div style="font-size:11px;color:#999"><span id="galleryCount">0 moments</span> · <span id="galleryStatus">LOCKED</span></div><div class="galleryactions"><button onclick="goScreen('camera')">＋ Take photo</button><button onclick="downloadMyPhotos()">↓ My photos</button><button onclick="goScreen('event')">Event</button></div></div><div id="galleryGrid" class="gallerygrid"></div></section>
+</div></div>
 <script>
-let stream=null, facing='environment', shots=Number(localStorage.getItem('za_shots')||12); const MAX=12;
-function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='camera')startCamera();if(id==='gallery')renderGallery();}
-function updateShots(){document.getElementById('shotsTop').textContent=shots;document.getElementById('shotsOverlay').textContent=shots;localStorage.setItem('za_shots',shots)}
-async function startCamera(){try{if(stream)stream.getTracks().forEach(t=>t.stop());stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:facing}},audio:false});document.getElementById('video').srcObject=stream}catch(e){alert('Kamera tidak bisa dibuka. Pastikan izin kamera aktif dan halaman menggunakan HTTPS.')}}
-async function toggleCamera(){facing=facing==='environment'?'user':'environment';await startCamera()}
-function takePhoto(){if(shots<=0){go('developing');return} const v=document.getElementById('video'),c=document.getElementById('canvas'); if(!v.videoWidth){alert('Kamera belum siap.');return} c.width=v.videoWidth;c.height=v.videoHeight;const x=c.getContext('2d');if(facing==='user'){x.translate(c.width,0);x.scale(-1,1)}x.drawImage(v,0,0,c.width,c.height); const data=c.toDataURL('image/jpeg',.82); const photos=JSON.parse(localStorage.getItem('za_photos')||'[]');photos.unshift({id:Date.now(),src:data,at:new Date().toISOString()});localStorage.setItem('za_photos',JSON.stringify(photos.slice(0,24)));shots--;updateShots(); if(shots<=0)go('developing')}
-function renderGallery(){const photos=JSON.parse(localStorage.getItem('za_photos')||'[]');const grid=document.getElementById('galleryGrid');grid.innerHTML='';photos.forEach((p,i)=>{const d=document.createElement('div');d.className='photo';d.innerHTML=`<img src="${p.src}" alt="Moment ${i+1}"><span>#${photos.length-i}</span>`;grid.appendChild(d)});document.getElementById('galleryCount').textContent=`${photos.length} photos`;document.getElementById('statPhotos').textContent=photos.length;document.getElementById('emptyGallery').classList.toggle('hidden',photos.length>0)}
-function downloadAllDemo(){const photos=JSON.parse(localStorage.getItem('za_photos')||'[]');if(!photos.length){alert('Belum ada foto.');return}photos.forEach((p,i)=>{const a=document.createElement('a');a.href=p.src;a.download=`ZA-Moment-${i+1}.jpg`;a.click()})}
-function tick(){const target=new Date('2027-02-07T18:00:00+08:00').getTime(),d=target-Date.now();if(d<=0){document.getElementById('countdown').textContent='GALLERY OPEN';return}const days=Math.floor(d/86400000),h=Math.floor(d%86400000/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);document.getElementById('countdown').textContent=`${days}d ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
-updateShots();renderGallery();tick();setInterval(tick,1000);
-</script>
-</body>
-</html>
+(() => {
+  const cfg = window.ZA_CONFIG || {};
+  const configured = cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY && !cfg.SUPABASE_URL.includes('PASTE_') && !cfg.SUPABASE_ANON_KEY.includes('PASTE_');
+  const sb = configured ? window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY) : null;
+  const params = new URLSearchParams(location.search);
+  const eventSlug = params.get('event') || cfg.DEFAULT_EVENT_SLUG || 'zaky-agnes-2027';
+  const guestKey = 'za_guest_id';
+  const guestId = localStorage.getItem(guestKey) || crypto.randomUUID();
+  localStorage.setItem(guestKey, guestId);
+  const localPhotoKey = `za_v3_photos_${eventSlug}_${guestId}`;
+  let stream = null, facing = 'environment', flashVisual = false, busy = false;
+  const THEME_NAMES = {elegant:'Wedding Elegant',vintage:'Vintage Film',polaroid:'Polaroid',javanese:'Javanese Wedding',clean:'Clean Minimal'};
+  let photoTheme = localStorage.getItem('za_photo_theme') || 'elegant';
+  if(!THEME_NAMES[photoTheme]) photoTheme='elegant';
+  let eventData = {id:null,slug:eventSlug,title:'Zaky & Agnes',event_date:'2027-02-07',location:'Muara Badak',shots_per_guest:12,reveal_at:'2027-02-07T18:00:00+08:00',is_active:true};
+  let usedShots = 0;
+  const $ = id => document.getElementById(id);
+  const modeDot=$('modeDot'), modeText=$('modeText');
+  modeDot.classList.toggle('online', configured); modeText.textContent = configured ? 'Cloud Mode · Supabase connected' : 'Demo Mode · isi config.js untuk cloud';
+
+  function prettyDate(s){try{return new Intl.DateTimeFormat('id-ID',{day:'2-digit',month:'long',year:'numeric'}).format(new Date(s+'T00:00:00')) .toUpperCase()}catch{return '07 FEBRUARI 2027'}}
+  function splitTitle(t){const parts=(t||'Zaky & Agnes').split('&');return parts.length>1?`${parts[0].trim()}<br>& ${parts.slice(1).join('&').trim()}`:t}
+  function localPhotos(){try{return JSON.parse(localStorage.getItem(localPhotoKey)||'[]')}catch{return[]}}
+  function setLocalPhotos(p){localStorage.setItem(localPhotoKey,JSON.stringify(p.slice(0,40)))}
+  function isRevealed(){return Date.now() >= new Date(eventData.reveal_at).getTime()}
+
+  function themeDate(){
+    const d=(eventData.event_date||'2027-02-07').split('-');
+    return d.length===3?`${d[2]} · ${d[1]} · ${d[0]}`:'07 · 02 · 2027';
+  }
+  function updateThemeUI(){
+    const preview=$('framePreview'), label=$('themeName');
+    if(preview){
+      preview.className=`framePreview theme-${photoTheme}`;
+      const text=preview.querySelector('.framePreviewText');
+      if(text) text.innerHTML=`${eventData.title||'Zaky & Agnes'}<small>${themeDate()}</small>`;
+    }
+    if(label) label.textContent=THEME_NAMES[photoTheme];
+    document.querySelectorAll('.themechip').forEach(b=>b.classList.toggle('active',b.dataset.theme===photoTheme));
+  }
+  window.setPhotoTheme=(theme)=>{
+    if(!THEME_NAMES[theme]) return;
+    photoTheme=theme;
+    localStorage.setItem('za_photo_theme',photoTheme);
+    updateThemeUI();
+    showToast(`${THEME_NAMES[photoTheme]} selected`);
+  };
+
+  async function loadEvent(){
+    if(configured){
+      const {data,error}=await sb.from('events').select('*').eq('slug',eventSlug).maybeSingle();
+      if(!error && data) eventData=data;
+      const {count}=eventData.id ? await sb.from('photos').select('*',{count:'exact',head:true}).eq('event_id',eventData.id).eq('guest_token',guestId) : {count:0};
+      usedShots=count||0;
+    } else usedShots=localPhotos().length;
+    paintEvent();
+  }
+  function paintEvent(){
+    const left=Math.max(0,(eventData.shots_per_guest||12)-usedShots);
+    $('eventTitle').innerHTML=splitTitle(eventData.title); $('galleryTitle').textContent=eventData.title;
+    $('eventDate').textContent=`${prettyDate(eventData.event_date)} · ${(eventData.location||'').toUpperCase()}`;
+    ['eventShotsTop','eventShotsCamera','cameraShots'].forEach(id=>$(id).textContent=left);
+    $('startButton').disabled=left<=0; $('startButton').textContent=left<=0?'FILM COMPLETE':'OPEN CAMERA';
+    $('lockLine').textContent=isRevealed()?'✓ Gallery is now open':'◷ Gallery reveals after the celebration';
+    updateThemeUI();
+  }
+
+  window.openEvent=()=>{const m=$('appModal');m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';goScreen('event')};
+  window.closeEvent=()=>{$('appModal').classList.remove('open');document.body.style.overflow='';stopCamera()};
+  window.goScreen=(name)=>{document.querySelectorAll('.appscreen').forEach(x=>x.classList.remove('active'));$('screen-'+name).classList.add('active'); if(name==='camera') startCamera(); else stopCamera(); if(name==='gallery') renderGallery();};
+
+  async function startCamera(){
+    const left=Math.max(0,(eventData.shots_per_guest||12)-usedShots); if(left<=0){goScreen('develop');return}
+    try{stopCamera();stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:facing},width:{ideal:1600},height:{ideal:2000}},audio:false});$('cameraVideo').srcObject=stream;$('cameraFallback').style.display='none'}catch(e){$('cameraFallback').style.display='block';showToast('Camera needs HTTPS + permission')}
+  }
+  function stopCamera(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}}
+  window.switchCamera=async()=>{facing=facing==='environment'?'user':'environment';await startCamera()};
+  window.toggleFlash=()=>{flashVisual=!flashVisual;$('flashButton').style.background=flashVisual?'#fff':'rgba(0,0,0,.35)';$('flashButton').style.color=flashVisual?'#111':'#fff'};
+  function showToast(text='Moment saved · no retake'){$('toast').textContent=text;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1400)}
+
+  function fitCover(ctx, source, dx,dy,dw,dh, sw,sh){
+    const scale=Math.max(dw/sw,dh/sh), nw=sw*scale, nh=sh*scale;
+    const sx=(nw-dw)/2/scale, sy=(nh-dh)/2/scale;
+    ctx.drawImage(source,sx,sy,dw/scale,dh/scale,dx,dy,dw,dh);
+  }
+  function roundedRect(ctx,x,y,w,h,r){
+    const rr=Math.min(r,w/2,h/2);
+    ctx.beginPath();ctx.moveTo(x+rr,y);ctx.arcTo(x+w,y,x+w,y+h,rr);ctx.arcTo(x+w,y+h,x,y+h,rr);ctx.arcTo(x,y+h,x,y,rr);ctx.arcTo(x,y,x+w,y,rr);ctx.closePath();
+  }
+  function drawTextPair(ctx,w,h,main,sub,opts={}){
+    ctx.textAlign=opts.align||'center';ctx.textBaseline='middle';
+    ctx.fillStyle=opts.color||'#fff';
+    ctx.font=`${Math.max(28,Math.round(w*.041))}px Georgia, serif`;
+    ctx.fillText(main,opts.x??w/2,opts.y??h*.89);
+    ctx.font=`700 ${Math.max(12,Math.round(w*.014))}px Arial, sans-serif`;
+    ctx.letterSpacing='2px';
+    ctx.fillText(sub,opts.x??w/2,(opts.y??h*.89)+Math.max(30,h*.027));
+  }
+  function addGrain(ctx,w,h,amount=0.035){
+    ctx.save();ctx.globalAlpha=amount;
+    for(let i=0;i<Math.min(9000,Math.floor(w*h/260));i++){
+      const v=Math.random()>.5?255:0;
+      ctx.fillStyle=`rgb(${v},${v},${v})`;
+      const z=Math.random()*1.5+.35;
+      ctx.fillRect(Math.random()*w,Math.random()*h,z,z);
+    }ctx.restore();
+  }
+  function drawJavaneseCorners(ctx,w,h,color){
+    const m=w*.035, len=w*.12;
+    ctx.save();ctx.strokeStyle=color;ctx.lineWidth=Math.max(3,w*.003);ctx.globalAlpha=.92;
+    const corner=(x,y,sx,sy)=>{
+      ctx.beginPath();
+      ctx.moveTo(x,y+sy*len);ctx.bezierCurveTo(x+sx*len*.15,y+sy*len*.55,x+sx*len*.55,y+sy*len*.15,x+sx*len,y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x,y+sy*len*.64);ctx.bezierCurveTo(x+sx*len*.18,y+sy*len*.42,x+sx*len*.35,y+sy*len*.2,x+sx*len*.63,y);
+      ctx.stroke();
+    };
+    corner(m,m,1,1);corner(w-m,m,-1,1);corner(m,h-m,1,-1);corner(w-m,h-m,-1,-1);
+    ctx.restore();
+  }
+  function canvasBlob(){return new Promise((resolve,reject)=>{
+    const v=$('cameraVideo'),c=$('captureCanvas'); if(!v.videoWidth)return reject(new Error('camera not ready'));
+    const maxSide=1600, scale=Math.min(1,maxSide/Math.max(v.videoWidth,v.videoHeight));
+    const w=Math.max(720,Math.round(v.videoWidth*scale)),h=Math.max(960,Math.round(v.videoHeight*scale));
+    c.width=w;c.height=h;const x=c.getContext('2d');
+    x.save();
+    if(facing==='user'){x.translate(w,0);x.scale(-1,1)}
+    const filters={elegant:'contrast(1.04) saturate(.92) sepia(.08)',vintage:'contrast(1.12) saturate(.72) sepia(.28)',polaroid:'contrast(1.03) saturate(.92)',javanese:'contrast(1.06) saturate(.9) sepia(.12)',clean:'contrast(1.02) saturate(.98)'};
+    x.filter=filters[photoTheme]||'none';
+
+    if(photoTheme==='polaroid'){
+      x.restore(); x.save(); x.fillStyle='#f8f6ef';x.fillRect(0,0,w,h);
+      const side=w*.045,top=h*.035,bottom=h*.17;
+      x.save();
+      if(facing==='user'){x.translate(w,0);x.scale(-1,1)}
+      x.filter=filters.polaroid;
+      fitCover(x,v,side,top,w-side*2,h-top-bottom,v.videoWidth,v.videoHeight);
+      x.restore();
+      x.fillStyle='#141414';x.textAlign='center';
+      x.font=`${Math.max(28,Math.round(w*.044))}px Georgia, serif`;x.fillText(eventData.title||'Zaky & Agnes',w/2,h-bottom*.58);
+      x.font=`700 ${Math.max(12,Math.round(w*.014))}px Arial`;x.fillText(themeDate(),w/2,h-bottom*.28);
+      x.font=`700 ${Math.max(10,Math.round(w*.011))}px Arial`;x.fillStyle='#777';x.fillText('ZA MOMENTS · WEDDING FILM',w/2,h-bottom*.12);
+    }else{
+      fitCover(x,v,0,0,w,h,v.videoWidth,v.videoHeight);
+      x.restore();
+      if(photoTheme==='elegant'){
+        x.fillStyle='rgba(239,218,184,.06)';x.fillRect(0,0,w,h);
+        const g=x.createLinearGradient(0,h*.62,0,h);g.addColorStop(0,'rgba(28,16,10,0)');g.addColorStop(1,'rgba(28,16,10,.68)');x.fillStyle=g;x.fillRect(0,h*.58,w,h*.42);
+        x.strokeStyle='rgba(247,233,205,.94)';x.lineWidth=Math.max(3,w*.004);x.strokeRect(w*.025,h*.022,w*.95,h*.956);
+        drawTextPair(x,w,h,eventData.title||'Zaky & Agnes',themeDate(),{color:'#f7ead3',y:h*.88});
+        x.fillStyle='rgba(247,234,211,.9)';x.font=`700 ${Math.max(10,Math.round(w*.011))}px Arial`;x.textAlign='left';x.fillText('ZA MOMENTS',w*.05,h*.06);
+      }
+      if(photoTheme==='vintage'){
+        const vg=x.createRadialGradient(w/2,h*.48,Math.min(w,h)*.15,w/2,h*.5,Math.max(w,h)*.72);
+        vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.56)');x.fillStyle=vg;x.fillRect(0,0,w,h);
+        addGrain(x,w,h,.06);
+        x.strokeStyle='rgba(15,15,15,.9)';x.lineWidth=Math.max(12,w*.016);x.strokeRect(0,0,w,h);
+        x.fillStyle='#f1c76f';x.font=`700 ${Math.max(14,Math.round(w*.017))}px monospace`;x.textAlign='left';x.fillText('ZA • 27',w*.05,h*.065);
+        x.textAlign='right';x.fillText(themeDate().replaceAll(' · ','.'),w*.95,h*.94);
+      }
+      if(photoTheme==='javanese'){
+        const g=x.createLinearGradient(0,h*.65,0,h);g.addColorStop(0,'rgba(78,10,20,0)');g.addColorStop(1,'rgba(78,10,20,.88)');x.fillStyle=g;x.fillRect(0,h*.56,w,h*.44);
+        x.strokeStyle='#d8ad58';x.lineWidth=Math.max(3,w*.004);x.strokeRect(w*.022,h*.018,w*.956,h*.964);
+        x.strokeStyle='rgba(216,173,88,.55)';x.lineWidth=Math.max(1,w*.0015);x.strokeRect(w*.034,h*.03,w*.932,h*.94);
+        drawJavaneseCorners(x,w,h,'#e5bd69');
+        drawTextPair(x,w,h,eventData.title||'Zaky & Agnes',themeDate(),{color:'#efd18b',y:h*.88});
+        x.fillStyle='#efd18b';x.font=`700 ${Math.max(10,Math.round(w*.011))}px Arial`;x.textAlign='center';x.fillText('WEDDING FILM · MUARA BADAK',w/2,h*.955);
+      }
+      if(photoTheme==='clean'){
+        x.fillStyle='rgba(255,255,255,.94)';x.fillRect(0,h*.885,w,h*.115);
+        x.fillStyle='#111';x.textAlign='left';x.font=`700 ${Math.max(17,Math.round(w*.023))}px Arial`;x.fillText(eventData.title||'Zaky & Agnes',w*.045,h*.925);
+        x.textAlign='right';x.font=`700 ${Math.max(11,Math.round(w*.013))}px Arial`;x.fillText(themeDate(),w*.955,h*.925);
+        x.textAlign='left';x.fillStyle='#777';x.font=`700 ${Math.max(9,Math.round(w*.01))}px Arial`;x.fillText('ZA MOMENTS',w*.045,h*.965);
+      }
+    }
+    if(flashVisual){x.fillStyle='rgba(255,250,230,.09)';x.fillRect(0,0,w,h)}
+    c.toBlob(b=>b?resolve(b):reject(new Error('capture failed')),'image/jpeg',.9)
+  })}
+  function blobDataURL(blob){return new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(blob)})}
+  window.takePhoto=async()=>{
+    if(busy)return; const max=eventData.shots_per_guest||12; if(usedShots>=max){goScreen('develop');return} busy=true;$('shutterButton').disabled=true;
+    try{
+      const blob=await canvasBlob(); const thumb=await blobDataURL(blob); $('lastThumb').innerHTML=`<img src="${thumb}" alt="last moment">`;
+      if(configured && eventData.id){
+        const file=`${eventData.id}/${guestId}/${Date.now()}-${crypto.randomUUID()}.jpg`;
+        const up=await sb.storage.from('moments').upload(file,blob,{contentType:'image/jpeg',upsert:false}); if(up.error)throw up.error;
+        const row=await sb.from('photos').insert({event_id:eventData.id,guest_token:guestId,storage_path:file});
+        if(row.error){await sb.storage.from('moments').remove([file]);throw row.error}
+      }else{
+        const photos=localPhotos(); photos.unshift({src:thumb,at:new Date().toISOString(),guest_token:guestId}); setLocalPhotos(photos);
+      }
+      usedShots++;paintEvent();showToast(`${THEME_NAMES[photoTheme]} · saved`); if(usedShots>=max)setTimeout(()=>goScreen('develop'),700);
+    }catch(e){console.error(e);showToast(e.message?.includes('shot_limit')?'No shots left':'Upload failed · try again')}
+    finally{busy=false;$('shutterButton').disabled=false}
+  };
+
+  window.openGallery=()=>{goScreen(isRevealed()?'gallery':'develop')};
+  async function renderGallery(){
+    const grid=$('galleryGrid');grid.innerHTML='<div class="empty">Loading film…</div>';
+    if(!isRevealed()){$('galleryStatus').textContent='LOCKED';grid.innerHTML='<div class="empty">This film is still developing.<br>Come back after the reveal time.</div>';return}
+    $('galleryStatus').textContent='OPEN'; let photos=[];
+    if(configured && eventData.id){
+      const {data,error}=await sb.from('photos').select('id,storage_path,created_at,guest_token').eq('event_id',eventData.id).order('created_at',{ascending:false});
+      if(!error && data){photos=await Promise.all(data.map(async p=>{const {data:u}=sb.storage.from('moments').getPublicUrl(p.storage_path);return {...p,src:u.publicUrl}}))}
+    } else photos=localPhotos();
+    $('galleryCount').textContent=`${photos.length} moments`;
+    grid.innerHTML=photos.length?photos.map((p,i)=>`<div class="gphoto"><img loading="lazy" src="${p.src}" alt="Wedding moment ${i+1}">${p.guest_token===guestId?'<small>MY SHOT</small>':''}</div>`).join(''):'<div class="empty">No moments yet.</div>';
+  }
+  window.downloadMyPhotos=async()=>{
+    let photos=[];
+    if(configured && eventData.id){const {data}=await sb.from('photos').select('storage_path').eq('event_id',eventData.id).eq('guest_token',guestId);photos=data||[];for(const [i,p] of photos.entries()){const {data:u}=sb.storage.from('moments').getPublicUrl(p.storage_path);const a=document.createElement('a');a.href=u.publicUrl;a.download=`ZA-Moment-${i+1}.jpg`;a.target='_blank';a.click()}}
+    else {photos=localPhotos();photos.forEach((p,i)=>{const a=document.createElement('a');a.href=p.src;a.download=`ZA-Moment-${i+1}.jpg`;a.click()})}
+    if(!photos.length)showToast('No photos yet');
+  };
+  window.shareEvent=async()=>{const url=location.href.split('#')[0];try{if(navigator.share)await navigator.share({title:eventData.title,text:'Open our disposable wedding camera',url});else{await navigator.clipboard.writeText(url);showToast('Event link copied')}}catch{}};
+  function tick(){const d=new Date(eventData.reveal_at).getTime()-Date.now(),el=$('developCountdown');if(d<=0){el.textContent='GALLERY OPEN';$('developButton').textContent='OPEN GALLERY';return}const days=Math.floor(d/86400000),h=Math.floor((d%86400000)/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);el.textContent=`${days}d ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
+  $('appModal').addEventListener('click',e=>{if(e.target===$('appModal'))closeEvent()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeEvent()});
+  updateThemeUI();loadEvent();tick();setInterval(tick,1000);
+})();
+
+</script></body></html>
