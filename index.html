@@ -1,4 +1,4 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f3efe5"><meta name="apple-mobile-web-app-capable" content="yes"><title>ZA Moments V3.2 — Themed Digital Disposable Camera</title><style>
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f3efe5"><meta name="apple-mobile-web-app-capable" content="yes"><title>ZA Moments V4.3 — Premium Image Frames</title><style>
 :root{--paper:#f3efe5;--paper2:#fbf8f1;--ink:#151515;--muted:#716d64;--blue:#3548e5;--yellow:#f2d34f;--pink:#e8c1ca;--green:#b9f48b;--line:#d4cdc0;--white:#fff;--black:#101010;--danger:#bd2b2b;--shadow:0 24px 70px rgba(20,20,20,.13)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.serif{font-family:Georgia,"Times New Roman",serif}.shell{max-width:1180px;margin:auto;padding:0 22px}.muted{color:var(--muted)}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.hide{display:none!important}
 .noise:before{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -17,34 +17,51 @@
 .adminlink{position:absolute;left:15px;top:15px;color:#fff;background:#111;border:1px solid #444;border-radius:999px;padding:8px 11px;font-size:10px;font-weight:800;z-index:5}
 .statusdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:#e6ad45}.statusdot.online{background:#57cf61}
 
-/* V3.2 — baked photo themes */
-.themechooser{margin:0 0 12px;padding:10px 0 2px}
-.themelabel{display:flex;justify-content:space-between;align-items:center;font-size:9px;font-weight:900;letter-spacing:.12em;margin-bottom:8px;color:rgba(255,255,255,.78)}
-.themelabel span{letter-spacing:0;text-transform:none;font-size:10px;color:#fff}
-.themechips{display:flex;gap:7px;overflow-x:auto;padding:1px 1px 5px;scrollbar-width:none}
-.themechips::-webkit-scrollbar{display:none}
-.themechip{flex:0 0 auto;border:1px solid rgba(255,255,255,.38);background:rgba(0,0,0,.28);color:#fff;border-radius:999px;padding:8px 10px;font-size:9px;font-weight:850;backdrop-filter:blur(10px)}
-.themechip.active{background:#fff;color:#111;border-color:#fff}
-.framePreview{pointer-events:none;position:absolute;inset:76px 15px 185px;border-radius:3px;z-index:1;transition:.2s;overflow:hidden}
-.framePreview:before,.framePreview:after{content:"";position:absolute}
-.framePreviewText{position:absolute;z-index:2;text-align:center;left:10px;right:10px;bottom:10px;font-family:Georgia,serif;font-size:14px;letter-spacing:.02em}
-.framePreviewText small{display:block;font-family:Inter,system-ui,sans-serif;font-size:7px;letter-spacing:.14em;margin-top:2px}
-.framePreview.theme-elegant{border:1px solid rgba(245,236,214,.8);box-shadow:inset 0 0 0 5px rgba(245,236,214,.12)}
-.framePreview.theme-elegant:after{left:0;right:0;bottom:0;height:58px;background:linear-gradient(transparent,rgba(38,24,18,.72))}
-.framePreview.theme-elegant .framePreviewText{color:#f7ecd8}
-.framePreview.theme-vintage{border:7px solid rgba(17,17,17,.72)}
-.framePreview.theme-vintage:before{inset:0;background:radial-gradient(circle,transparent 54%,rgba(0,0,0,.35))}
-.framePreview.theme-vintage .framePreviewText{left:14px;right:auto;text-align:left;color:#f2cf7a;font-family:monospace;font-size:11px}
-.framePreview.theme-polaroid{border:10px solid rgba(248,247,242,.94);border-bottom-width:50px}
-.framePreview.theme-polaroid .framePreviewText{bottom:-38px;color:#171717;font-size:13px}
-.framePreview.theme-javanese{border:2px solid rgba(224,183,93,.9);box-shadow:inset 0 0 0 5px rgba(86,16,25,.28)}
-.framePreview.theme-javanese:after{left:0;right:0;bottom:0;height:64px;background:linear-gradient(transparent,rgba(79,13,24,.86))}
-.framePreview.theme-javanese .framePreviewText{color:#efd18b}
-.framePreview.theme-clean{border:1px solid rgba(255,255,255,.85)}
-.framePreview.theme-clean:after{left:0;right:0;bottom:0;height:45px;background:rgba(255,255,255,.92)}
-.framePreview.theme-clean .framePreviewText{color:#111;font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:800;bottom:14px}
-@media(max-height:720px){.framePreview{inset:70px 13px 205px}.themechip{padding:7px 9px}.themechooser{margin-bottom:6px}.cammeta{margin-bottom:8px}}
 
+/* V4 — premium photo themes + reliable capture UI */
+.themechooser{margin:0 0 10px;padding:8px 0 1px}
+.themelabel{display:flex;justify-content:space-between;align-items:center;font-size:9px;font-weight:900;letter-spacing:.13em;margin-bottom:8px;color:rgba(255,255,255,.72)}
+.themelabel span{letter-spacing:0;text-transform:none;font-size:10px;color:#fff;max-width:58%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.themechips{display:flex;gap:7px;overflow-x:auto;padding:1px 1px 6px;scrollbar-width:none;scroll-snap-type:x proximity}
+.themechips::-webkit-scrollbar{display:none}
+.themechip{flex:0 0 auto;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.34);color:#fff;border-radius:999px;padding:8px 11px;font-size:9px;font-weight:850;backdrop-filter:blur(12px);scroll-snap-align:start}
+.themechip.active{background:#fff;color:#111;border-color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.framePreview{pointer-events:none;position:absolute;inset:76px 15px 191px;border-radius:4px;z-index:1;transition:.2s;overflow:hidden}
+.framePreview:before,.framePreview:after{content:"";position:absolute}
+.framePreviewText{position:absolute;z-index:3;text-align:center;left:10px;right:10px;bottom:10px;font-family:Georgia,serif;font-size:14px;letter-spacing:.02em;text-shadow:0 1px 9px rgba(0,0,0,.25)}
+.framePreviewText small{display:block;font-family:Inter,system-ui,sans-serif;font-size:7px;letter-spacing:.16em;margin-top:3px}
+.framePreview.theme-signature{border:2px solid rgba(246,226,187,.98);box-shadow:inset 0 0 0 2px rgba(255,255,255,.42),inset 0 0 0 14px rgba(246,226,187,.12),0 18px 34px rgba(0,0,0,.18)}
+.framePreview.theme-signature:before{left:50%;top:10px;width:58px;height:58px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff8ef,#ecd4a4 60%,#b78b3e 100%);box-shadow:0 10px 22px rgba(0,0,0,.18)}
+.framePreview.theme-signature:after{left:20px;right:20px;bottom:16px;height:58px;border-radius:999px;background:linear-gradient(180deg,rgba(78,56,25,.3),rgba(52,35,15,.82))}
+.framePreview.theme-signature .framePreviewText{color:#fbf0df;bottom:26px}
+.framePreview.theme-java{border:2px solid rgba(227,184,85,.96);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),inset 0 0 0 10px rgba(96,18,34,.24),0 18px 34px rgba(0,0,0,.16)}
+.framePreview.theme-java:before{inset:10px;border:1px solid rgba(227,184,85,.45)}
+.framePreview.theme-java:after{left:14px;right:14px;bottom:14px;height:60px;border-radius:10px;background:linear-gradient(180deg,rgba(96,18,34,.12),rgba(96,18,34,.94))}
+.framePreview.theme-java .framePreviewText{color:#f1d390;bottom:25px}
+.framePreview.theme-rose{border:2px solid rgba(255,235,240,.98);box-shadow:inset 0 0 0 10px rgba(233,180,193,.12),0 18px 34px rgba(0,0,0,.15)}
+.framePreview.theme-rose:before{left:14px;right:14px;top:10px;height:30px;border-top:2px solid rgba(255,240,243,.96);border-radius:999px}
+.framePreview.theme-rose:after{left:18px;right:18px;bottom:14px;height:56px;border-radius:999px;background:linear-gradient(180deg,rgba(136,68,84,.18),rgba(108,49,63,.78))}
+.framePreview.theme-rose .framePreviewText{color:#fff4f5;bottom:24px}
+.framePreview.theme-editorial{border:12px solid rgba(10,10,10,.94);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 18px 34px rgba(0,0,0,.22)}
+.framePreview.theme-editorial:after{left:0;right:0;bottom:0;height:58px;background:#0b0b0b}
+.framePreview.theme-editorial .framePreviewText{left:14px;right:14px;text-align:left;color:#fff;font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:900;bottom:18px;text-transform:uppercase}
+.framePreview.theme-midnight{border:2px solid rgba(209,218,242,.82);box-shadow:inset 0 0 0 9px rgba(11,24,53,.25),0 18px 34px rgba(0,0,0,.18)}
+.framePreview.theme-midnight:before{inset:0;background:radial-gradient(circle at 22% 18%,rgba(255,255,255,.9) 0 1px,transparent 2px),radial-gradient(circle at 67% 22%,rgba(255,255,255,.6) 0 1px,transparent 2px),radial-gradient(circle at 80% 40%,rgba(255,255,255,.8) 0 1px,transparent 2px)}
+.framePreview.theme-midnight:after{left:18px;right:18px;bottom:14px;height:58px;border-radius:999px;background:linear-gradient(180deg,rgba(10,22,46,.18),rgba(7,17,42,.9))}
+.framePreview.theme-midnight .framePreviewText{color:#eef3ff;bottom:24px}
+.framePreview.theme-polaroid{border:10px solid rgba(248,247,242,.98);border-bottom-width:58px;box-shadow:0 16px 28px rgba(0,0,0,.2)}
+.framePreview.theme-polaroid .framePreviewText{bottom:-43px;color:#171717;text-shadow:none;font-size:13px}
+.syncstate{position:absolute;top:119px;right:16px;z-index:4;background:rgba(0,0,0,.42);color:#fff;border:1px solid rgba(255,255,255,.26);backdrop-filter:blur(9px);border-radius:999px;padding:6px 9px;font-size:8px;font-weight:850;letter-spacing:.08em}
+.syncstate.ok{background:rgba(20,95,52,.72)}.syncstate.wait{background:rgba(133,85,10,.75)}.syncstate.off{background:rgba(85,85,85,.7)}
+@media(max-height:720px){.framePreview{inset:68px 13px 210px}.themechip{padding:7px 9px}.themechooser{margin-bottom:4px}.cammeta{margin-bottom:7px}.syncstate{top:108px}}
+
+
+/* V4.3 image-based premium frames */
+.framePreview{background:transparent !important;border:none !important;box-shadow:0 14px 28px rgba(0,0,0,.18);overflow:hidden}
+.framePreview:before,.framePreview:after{content:none !important;display:none !important}
+.framePreviewImage{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(0,0,0,.18));}
+.framePreviewText{display:none !important}
+.themechip{padding:9px 12px;font-size:9px}
 @media(max-width:860px){.navlinks{display:none}.hero{padding-top:42px}.hero-grid,.features,.demogrid{grid-template-columns:1fr}.hero-grid{gap:20px}.stage{min-height:560px}.blob{width:430px;height:430px}.phone{width:278px;height:570px}.steps{grid-template-columns:1fr}.sectionhead{display:block}.sectionhead p{margin-top:20px}.featurehero{min-height:440px}.featuregrid{grid-template-columns:1fr 1fr}.footerin{display:block}.footer small{display:block;margin-top:30px}.demo{padding:80px 0}}
 @media(max-width:520px){.shell{padding:0 16px}.hero h1{font-size:58px}.hero p{font-size:16px}.stage{min-height:510px}.blob{width:370px;height:370px}.phone{width:250px;height:510px;border-radius:38px}.float{font-size:10px;padding:11px}.f1{right:-4px}.f2{left:-4px}.section{padding:72px 0}.featuregrid{grid-template-columns:1fr}.cameraProduct{transform:none}.appmodal{padding:0}.appbox{height:100dvh;border-radius:0;max-width:none}.closeapp{top:calc(10px + env(safe-area-inset-top));right:10px}.eventhome{padding-top:calc(58px + env(safe-area-inset-top))}.cameraScreen{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}}
 
@@ -61,13 +78,13 @@ window.ZA_CONFIG = {
 <header class="hero"><div class="shell hero-grid"><div><div class="eyebrow">DIGITAL DISPOSABLE CAMERA · WEDDING EDITION</div><h1>Every guest.<br>Every angle.<br><em>One story.</em></h1><p>QR camera untuk acara tanpa install aplikasi. Tamu tinggal scan, ambil foto dari sudut mereka, lalu semua momen berkembang menjadi satu album bersama.</p><div class="actions"><button class="btn" onclick="openEvent()">Buka Event Zaky & Agnes</button><a class="btn light" href="#how">Lihat cara kerja</a></div><div class="micro"><span id="modeDot" class="statusdot"></span><span id="modeText">Checking connection…</span></div></div><div class="stage"><div class="blob"></div><div class="phone"><div class="notch"></div><div class="phonescreen"><div class="phonehead"><span>ZA MOMENTS</span><span>12 SHOTS</span></div><div class="phonebottom"><h3>Zaky & Agnes</h3><span class="pill">07 FEB 2027 · MUARA BADAK</span><div class="shutterdemo"></div></div></div></div><div class="float f1"><b>12 shots</b>per guest</div><div class="float f2"><b>1 shared film</b>all guests</div></div></div></header>
 <div class="marquee"><div class="track"><span>SCAN QR · NO APP · TAKE PHOTOS · NO RETAKES · DELAYED REVEAL · ONE SHARED GALLERY · </span><span>SCAN QR · NO APP · TAKE PHOTOS · NO RETAKES · DELAYED REVEAL · ONE SHARED GALLERY · </span></div></div>
 <section id="how" class="section"><div class="shell"><div class="sectionhead"><div><div class="eyebrow">HOW IT WORKS</div><h2>Disposable-camera feeling, tanpa bagi-bagi kamera.</h2></div><p class="muted">Satu QR untuk seluruh tamu. Setiap browser mendapatkan identitas tamu dan jatah foto sendiri.</p></div><div class="steps"><article class="step"><div class="eyebrow">01 · ENTER</div><h3>Scan QR</h3><p>QR membawa tamu langsung ke event. Tidak perlu akun dan tidak perlu install aplikasi.</p><div class="stepart"><div class="qrart"></div></div></article><article class="step"><div class="eyebrow">02 · CAPTURE</div><h3>Take the moment</h3><p>Kamera full-screen, pilihan depan/belakang, counter jepretan dan pengalaman “no retakes”.</p><div class="stepart"><div class="camart"></div></div></article><article class="step"><div class="eyebrow">03 · REVEAL</div><h3>Develop together</h3><p>Foto terkumpul ke satu album dan baru dibuka sesuai waktu reveal yang ditentukan admin.</p><div class="stepart"><div class="film"><i></i><i></i></div></div></article></div></div></section>
-<section id="features" class="section alt"><div class="shell"><div class="features"><div class="featurehero"><div class="eyebrow">ZA MOMENTS V3</div><h3>Now built for a real shared event.</h3><p>V3 bukan sekadar simulasi lokal. Saat Supabase dikonfigurasi, upload kamera dari banyak HP masuk ke satu database dan storage event.</p><div class="reel"></div></div><div class="featuregrid"><article class="feat"><b>◎</b><h4>Guest ID</h4><p>Jatah foto dihitung per browser/tamu, bukan satu counter global.</p></article><article class="feat"><b>☁</b><h4>Cloud Upload</h4><p>Foto disimpan ke Supabase Storage dan metadata ke database.</p></article><article class="feat"><b>◷</b><h4>Delayed Reveal</h4><p>Galeri punya countdown dan status locked sampai waktu yang dipilih.</p></article><article class="feat"><b>⌘</b><h4>Admin Control</h4><p>Event, shots, reveal, QR, hapus foto dan download album dari dashboard admin.</p></article></div></div></div></section>
+<section id="features" class="section alt"><div class="shell"><div class="features"><div class="featurehero"><div class="eyebrow">ZA MOMENTS V4.3</div><h3>Now built for a real shared event.</h3><p>V3 bukan sekadar simulasi lokal. Saat Supabase dikonfigurasi, upload kamera dari banyak HP masuk ke satu database dan storage event.</p><div class="reel"></div></div><div class="featuregrid"><article class="feat"><b>◎</b><h4>Guest ID</h4><p>Jatah foto dihitung per browser/tamu, bukan satu counter global.</p></article><article class="feat"><b>☁</b><h4>Cloud Upload</h4><p>Foto disimpan ke Supabase Storage dan metadata ke database.</p></article><article class="feat"><b>◷</b><h4>Delayed Reveal</h4><p>Galeri punya countdown dan status locked sampai waktu yang dipilih.</p></article><article class="feat"><b>⌘</b><h4>Admin Control</h4><p>Event, shots, reveal, QR, hapus foto dan download album dari dashboard admin.</p></article></div></div></div></section>
 <section id="demo" class="demo"><div class="shell demogrid"><div><div class="eyebrow">LIVE INTERACTION</div><h2>Try the wedding film.</h2><p>Buka event, izinkan kamera, lalu ambil foto seperti tamu sungguhan. Di Demo Mode foto tetap tersimpan lokal; setelah Supabase aktif foto masuk ke cloud.</p><button class="btn yellow" onclick="openEvent()">OPEN CAMERA EXPERIENCE</button></div><div class="cameraProduct"><div class="cpbrand">ZA MOMENTS</div><div class="cpsub">DIGITAL DISPOSABLE · WEDDING FILM</div><div class="view"></div><div class="flash"></div><div class="lens"></div><div class="onlinebadge"><span></span>CLOUD READY</div><div class="winder"></div><div class="counter">12</div></div></div></section>
-<footer class="footer"><div class="shell footerin"><div><div class="brand"><span class="brandicon"></span>ZA MOMENTS</div><h3>Every angle matters.</h3></div><small>V3.2 · Zaky & Agnes · 7 February 2027</small></div></footer>
+<footer class="footer"><div class="shell footerin"><div><div class="brand"><span class="brandicon"></span>ZA MOMENTS</div><h3>Every angle matters.</h3></div><small>V4.3 · Zaky & Agnes · Image Frame Collection</small></div></footer>
 
 <div id="appModal" class="appmodal" aria-hidden="true"><div class="appbox"><button class="closeapp" onclick="closeEvent()">×</button>
 <section id="screen-event" class="appscreen eventhome active"><div class="eventhead"><span>ZA MOMENTS</span><span><span id="eventShotsTop">12</span> SHOTS</span></div><div id="eventTitle" class="eventtitle">Zaky<br>& Agnes</div><div id="eventDate" class="eventdate">07 FEBRUARI 2027 · MUARA BADAK</div><div class="disposable"><div class="dispbrand">ZA</div><div class="dispsub">DIGITAL DISPOSABLE</div><div class="dispview"></div><div class="dispflash"></div><div class="displens"></div><div id="eventShotsCamera" class="dispcount">12</div></div><button id="startButton" class="startcapture" onclick="goScreen('camera')">OPEN CAMERA</button><div class="eventactions"><button onclick="openGallery()">VIEW FILM</button><button onclick="shareEvent()">SHARE EVENT</button></div><div id="lockLine" class="lockline">◷ Gallery reveals after the celebration</div></section>
-<section id="screen-camera" class="appscreen cameraScreen"><video id="cameraVideo" class="cameraVideo" autoplay playsinline muted></video><div id="cameraFallback" class="camerafallback"></div><canvas id="captureCanvas" hidden></canvas><div id="framePreview" class="framePreview theme-elegant"><div class="framePreviewText">Zaky & Agnes<small>07 · 02 · 2027</small></div></div><div class="camui"><div class="camt"><button class="circlebtn" onclick="goScreen('event')">‹</button><div class="camevent">ZAKY & AGNES<br><span style="opacity:.65">07.02.2027</span></div><button id="flashButton" class="circlebtn" onclick="toggleFlash()">⚡</button></div><div class="camb"><div class="themechooser"><div class="themelabel">PHOTO THEME <span id="themeName">Wedding Elegant</span></div><div class="themechips"><button class="themechip active" data-theme="elegant" onclick="setPhotoTheme('elegant')">Elegant</button><button class="themechip" data-theme="vintage" onclick="setPhotoTheme('vintage')">Vintage Film</button><button class="themechip" data-theme="polaroid" onclick="setPhotoTheme('polaroid')">Polaroid</button><button class="themechip" data-theme="javanese" onclick="setPhotoTheme('javanese')">Javanese</button><button class="themechip" data-theme="clean" onclick="setPhotoTheme('clean')">Clean</button></div></div><div class="cammeta"><div><div style="font-size:10px;opacity:.7">DIGITAL FILM</div><b><span id="cameraShots">12</span><span style="font-size:13px;font-weight:500"> left</span></b></div><div style="font-size:10px;text-align:right;opacity:.75">THEME BAKED IN<br>NO RETAKES</div></div><div class="shutterrow"><div id="lastThumb" class="shotthumb"></div><button id="shutterButton" class="shutter" onclick="takePhoto()" aria-label="Ambil foto"></button><button class="circlebtn" onclick="switchCamera()">↻</button></div></div></div><div id="toast" class="toast">Moment saved · theme applied</div></section>
+<section id="screen-camera" class="appscreen cameraScreen"><video id="cameraVideo" class="cameraVideo" autoplay playsinline muted></video><div id="cameraFallback" class="camerafallback"></div><canvas id="captureCanvas" hidden></canvas><div id="framePreview" class="framePreview"><img id="framePreviewImage" class="framePreviewImage" src="frames/signature.png" alt="Frame preview"><div class="framePreviewText">Zaky & Agnes<small>07 · 02 · 2027</small></div></div><div id="syncState" class="syncstate off">LOCAL SAFE</div><div class="camui"><div class="camt"><button class="circlebtn" onclick="goScreen('event')">‹</button><div class="camevent">ZAKY & AGNES<br><span style="opacity:.65">07.02.2027</span></div><button id="flashButton" class="circlebtn" onclick="toggleFlash()">⚡</button></div><div class="camb"><div class="themechooser"><div class="themelabel">PREMIUM PHOTO THEME <span id="themeName">Royal Marble</span></div><div class="themechips"><button class="themechip active" data-theme="signature" onclick="setPhotoTheme('signature')">Royal Marble</button><button class="themechip" data-theme="editorial" onclick="setPhotoTheme('editorial')">Noir Rose</button><button class="themechip" data-theme="minimal" onclick="setPhotoTheme('minimal')">Ivory Gold</button><button class="themechip" data-theme="rose" onclick="setPhotoTheme('rose')">Floral Blush</button><button class="themechip" data-theme="java" onclick="setPhotoTheme('java')">Java Royal</button></div></div><div class="cammeta"><div><div style="font-size:10px;opacity:.7">DIGITAL FILM</div><b><span id="cameraShots">12</span><span style="font-size:13px;font-weight:500"> left</span></b></div><div style="font-size:10px;text-align:right;opacity:.75">SAVED LOCALLY FIRST<br>AUTO SYNC</div></div><div class="shutterrow"><div id="lastThumb" class="shotthumb"></div><button id="shutterButton" class="shutter" onclick="takePhoto()" aria-label="Ambil foto"></button><button class="circlebtn" onclick="switchCamera()">↻</button></div></div></div><div id="toast" class="toast">Saved safely on this phone</div></section>
 <section id="screen-develop" class="appscreen developing"><div class="filmanim"></div><div class="eyebrow">YOUR FILM IS DEVELOPING</div><h3>See every moment<br>after the party.</h3><p class="muted">Semua foto tamu dikumpulkan menjadi satu album.</p><div id="developCountdown" class="devcount">--:--:--</div><button id="developButton" class="btn" onclick="openGallery()">CHECK GALLERY</button></section>
 <section id="screen-gallery" class="appscreen galleryapp"><div class="galleryhero"><div class="eyebrow" style="color:#999">THE WEDDING FILM</div><h3 id="galleryTitle">Zaky & Agnes</h3><div style="font-size:11px;color:#999"><span id="galleryCount">0 moments</span> · <span id="galleryStatus">LOCKED</span></div><div class="galleryactions"><button onclick="goScreen('camera')">＋ Take photo</button><button onclick="downloadMyPhotos()">↓ My photos</button><button onclick="goScreen('event')">Event</button></div></div><div id="galleryGrid" class="gallerygrid"></div></section>
 </div></div>
@@ -81,11 +98,50 @@ window.ZA_CONFIG = {
   const guestKey = 'za_guest_id';
   const guestId = localStorage.getItem(guestKey) || crypto.randomUUID();
   localStorage.setItem(guestKey, guestId);
-  const localPhotoKey = `za_v3_photos_${eventSlug}_${guestId}`;
-  let stream = null, facing = 'environment', flashVisual = false, busy = false;
-  const THEME_NAMES = {elegant:'Wedding Elegant',vintage:'Vintage Film',polaroid:'Polaroid',javanese:'Javanese Wedding',clean:'Clean Minimal'};
-  let photoTheme = localStorage.getItem('za_photo_theme') || 'elegant';
-  if(!THEME_NAMES[photoTheme]) photoTheme='elegant';
+  let stream = null, facing = 'environment', flashVisual = false, busy = false, cameraReady = false;
+  const THEME_NAMES = {
+    signature:'Royal Marble', editorial:'Noir Rose', minimal:'Ivory Gold', rose:'Floral Blush', java:'Java Royal'
+  };
+  const FRAME_ASSETS = {
+    signature:'frames/signature.png',
+    editorial:'frames/editorial.png',
+    minimal:'frames/minimal.png',
+    rose:'frames/rose.png',
+    java:'frames/java.png'
+  };
+  let photoTheme = localStorage.getItem('za_photo_theme') || 'signature';
+  if(!THEME_NAMES[photoTheme]) photoTheme='signature';
+
+  const DB_NAME='za_moments_v4', DB_STORE='captures';
+  let dbPromise=null;
+  function openCaptureDB(){
+    if(dbPromise)return dbPromise;
+    dbPromise=new Promise((resolve,reject)=>{
+      const req=indexedDB.open(DB_NAME,1);
+      req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains(DB_STORE)){const st=db.createObjectStore(DB_STORE,{keyPath:'id'});st.createIndex('event_guest','eventGuest',{unique:false});st.createIndex('status','status',{unique:false})}};
+      req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);
+    });
+    return dbPromise;
+  }
+  async function dbPut(rec){const db=await openCaptureDB();return new Promise((res,rej)=>{const tx=db.transaction(DB_STORE,'readwrite');tx.objectStore(DB_STORE).put(rec);tx.oncomplete=()=>res(rec);tx.onerror=()=>rej(tx.error)})}
+  async function dbDelete(id){const db=await openCaptureDB();return new Promise((res,rej)=>{const tx=db.transaction(DB_STORE,'readwrite');tx.objectStore(DB_STORE).delete(id);tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error)})}
+  async function dbAll(){const db=await openCaptureDB();return new Promise((res,rej)=>{const tx=db.transaction(DB_STORE,'readonly');const q=tx.objectStore(DB_STORE).getAll();q.onsuccess=()=>res(q.result||[]);q.onerror=()=>rej(q.error)})}
+  async function myLocalCaptures(){return (await dbAll()).filter(r=>r.eventSlug===eventSlug && r.guestId===guestId)}
+  async function pendingCaptures(){return (await dbAll()).filter(r=>r.status==='pending' && r.eventSlug===eventSlug && r.guestId===guestId)}
+  function setSyncState(text,kind='off'){const el=$('syncState');if(!el)return;el.textContent=text;el.className=`syncstate ${kind}`}
+  const frameImageCache = {};
+  function loadFrameAsset(theme){
+    return new Promise((resolve,reject)=>{
+      const src=FRAME_ASSETS[theme];
+      if(!src) return resolve(null);
+      if(frameImageCache[src]) return resolve(frameImageCache[src]);
+      const img=new Image();
+      img.onload=()=>{frameImageCache[src]=img;resolve(img)};
+      img.onerror=()=>reject(new Error('frame_load_failed'));
+      img.src=src;
+    });
+  }
+
   let eventData = {id:null,slug:eventSlug,title:'Zaky & Agnes',event_date:'2027-02-07',location:'Muara Badak',shots_per_guest:12,reveal_at:'2027-02-07T18:00:00+08:00',is_active:true};
   let usedShots = 0;
   const $ = id => document.getElementById(id);
@@ -94,8 +150,6 @@ window.ZA_CONFIG = {
 
   function prettyDate(s){try{return new Intl.DateTimeFormat('id-ID',{day:'2-digit',month:'long',year:'numeric'}).format(new Date(s+'T00:00:00')) .toUpperCase()}catch{return '07 FEBRUARI 2027'}}
   function splitTitle(t){const parts=(t||'Zaky & Agnes').split('&');return parts.length>1?`${parts[0].trim()}<br>& ${parts.slice(1).join('&').trim()}`:t}
-  function localPhotos(){try{return JSON.parse(localStorage.getItem(localPhotoKey)||'[]')}catch{return[]}}
-  function setLocalPhotos(p){localStorage.setItem(localPhotoKey,JSON.stringify(p.slice(0,40)))}
   function isRevealed(){return Date.now() >= new Date(eventData.reveal_at).getTime()}
 
   function themeDate(){
@@ -103,12 +157,9 @@ window.ZA_CONFIG = {
     return d.length===3?`${d[2]} · ${d[1]} · ${d[0]}`:'07 · 02 · 2027';
   }
   function updateThemeUI(){
-    const preview=$('framePreview'), label=$('themeName');
-    if(preview){
-      preview.className=`framePreview theme-${photoTheme}`;
-      const text=preview.querySelector('.framePreviewText');
-      if(text) text.innerHTML=`${eventData.title||'Zaky & Agnes'}<small>${themeDate()}</small>`;
-    }
+    const preview=$('framePreview'), label=$('themeName'), previewImg=$('framePreviewImage');
+    if(previewImg){previewImg.src=FRAME_ASSETS[photoTheme]||''; previewImg.alt=`${THEME_NAMES[photoTheme]||'Frame'} preview`;}
+    if(preview){preview.dataset.theme=photoTheme;}
     if(label) label.textContent=THEME_NAMES[photoTheme];
     document.querySelectorAll('.themechip').forEach(b=>b.classList.toggle('active',b.dataset.theme===photoTheme));
   }
@@ -121,12 +172,31 @@ window.ZA_CONFIG = {
   };
 
   async function loadEvent(){
+    const cacheKey=`za_event_cache_${eventSlug}`;
     if(configured){
-      const {data,error}=await sb.from('events').select('*').eq('slug',eventSlug).maybeSingle();
-      if(!error && data) eventData=data;
-      const {count}=eventData.id ? await sb.from('photos').select('*',{count:'exact',head:true}).eq('event_id',eventData.id).eq('guest_token',guestId) : {count:0};
-      usedShots=count||0;
-    } else usedShots=localPhotos().length;
+      try{
+        const {data,error}=await sb.from('events').select('*').eq('slug',eventSlug).maybeSingle();
+        if(!error && data){eventData=data;localStorage.setItem(cacheKey,JSON.stringify(data))}
+        else{const c=localStorage.getItem(cacheKey);if(c)eventData=JSON.parse(c)}
+      }catch{const c=localStorage.getItem(cacheKey);if(c)eventData=JSON.parse(c)}
+      if(eventData.id){
+        await syncPending(true);
+        let serverCount=Number(localStorage.getItem(`za_count_${eventSlug}_${guestId}`)||0);
+        try{
+          const {count,error}=await sb.from('photos').select('*',{count:'exact',head:true}).eq('event_id',eventData.id).eq('guest_token',guestId);
+          if(!error && Number.isFinite(count)){serverCount=count;localStorage.setItem(`za_count_${eventSlug}_${guestId}`,String(count))}
+        }catch{}
+        const pending=(await pendingCaptures()).filter(r=>r.eventId===eventData.id);
+        usedShots=serverCount+pending.length;
+        setSyncState(navigator.onLine?'CLOUD READY':'OFFLINE SAFE',navigator.onLine?'ok':'wait');
+      }else{
+        usedShots=(await myLocalCaptures()).length;
+        setSyncState('LOCAL SAFE','off');
+      }
+    }else{
+      usedShots=(await myLocalCaptures()).length;
+      setSyncState('LOCAL SAFE','off');
+    }
     paintEvent();
   }
   function paintEvent(){
@@ -143,154 +213,259 @@ window.ZA_CONFIG = {
   window.closeEvent=()=>{$('appModal').classList.remove('open');document.body.style.overflow='';stopCamera()};
   window.goScreen=(name)=>{document.querySelectorAll('.appscreen').forEach(x=>x.classList.remove('active'));$('screen-'+name).classList.add('active'); if(name==='camera') startCamera(); else stopCamera(); if(name==='gallery') renderGallery();};
 
+  function wait(ms){return new Promise(r=>setTimeout(r,ms))}
+  async function waitVideoReady(v,timeout=4500){
+    if(v.readyState>=2 && v.videoWidth>0)return true;
+    return new Promise((resolve,reject)=>{
+      const done=()=>{cleanup();resolve(true)}, fail=()=>{cleanup();reject(new Error('camera_timeout'))};
+      const cleanup=()=>{clearTimeout(t);v.removeEventListener('loadedmetadata',done);v.removeEventListener('canplay',done)};
+      const t=setTimeout(fail,timeout);v.addEventListener('loadedmetadata',done,{once:true});v.addEventListener('canplay',done,{once:true});
+    });
+  }
   async function startCamera(){
     const left=Math.max(0,(eventData.shots_per_guest||12)-usedShots); if(left<=0){goScreen('develop');return}
-    try{stopCamera();stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:facing},width:{ideal:1600},height:{ideal:2000}},audio:false});$('cameraVideo').srcObject=stream;$('cameraFallback').style.display='none'}catch(e){$('cameraFallback').style.display='block';showToast('Camera needs HTTPS + permission')}
+    if(!navigator.mediaDevices?.getUserMedia){$('cameraFallback').style.display='block';showToast('Browser tidak mendukung kamera');return}
+    cameraReady=false;stopCamera();
+    const attempts=[
+      {video:{facingMode:{ideal:facing},width:{ideal:1280},height:{ideal:1920}},audio:false},
+      {video:{facingMode:{ideal:facing},width:{ideal:960}},audio:false},
+      {video:true,audio:false}
+    ];
+    let lastErr;
+    for(const constraints of attempts){
+      try{
+        stream=await navigator.mediaDevices.getUserMedia(constraints);
+        const v=$('cameraVideo');v.srcObject=stream;await v.play().catch(()=>{});
+        await waitVideoReady(v);cameraReady=true;$('cameraFallback').style.display='none';return;
+      }catch(e){lastErr=e;stopCamera();await wait(180)}
+    }
+    console.error(lastErr);$('cameraFallback').style.display='block';
+    showToast(location.protocol==='https:'?'Izin kamera gagal · cek permission':'Kamera perlu HTTPS');
   }
-  function stopCamera(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}}
-  window.switchCamera=async()=>{facing=facing==='environment'?'user':'environment';await startCamera()};
+  function stopCamera(){cameraReady=false;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}}
+  window.switchCamera=async()=>{if(busy)return;facing=facing==='environment'?'user':'environment';showToast('Switching camera…');await startCamera()};
   window.toggleFlash=()=>{flashVisual=!flashVisual;$('flashButton').style.background=flashVisual?'#fff':'rgba(0,0,0,.35)';$('flashButton').style.color=flashVisual?'#111':'#fff'};
   function showToast(text='Moment saved · no retake'){$('toast').textContent=text;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1400)}
 
   function fitCover(ctx, source, dx,dy,dw,dh, sw,sh){
-    const scale=Math.max(dw/sw,dh/sh), nw=sw*scale, nh=sh*scale;
-    const sx=(nw-dw)/2/scale, sy=(nh-dh)/2/scale;
-    ctx.drawImage(source,sx,sy,dw/scale,dh/scale,dx,dy,dw,dh);
+    const scale=Math.max(dw/sw,dh/sh), srcW=dw/scale, srcH=dh/scale;
+    const sx=(sw-srcW)/2, sy=(sh-srcH)/2;
+    ctx.drawImage(source,sx,sy,srcW,srcH,dx,dy,dw,dh);
   }
-  function roundedRect(ctx,x,y,w,h,r){
-    const rr=Math.min(r,w/2,h/2);
-    ctx.beginPath();ctx.moveTo(x+rr,y);ctx.arcTo(x+w,y,x+w,y+h,rr);ctx.arcTo(x+w,y+h,x,y+h,rr);ctx.arcTo(x,y+h,x,y,rr);ctx.arcTo(x,y,x+w,y,rr);ctx.closePath();
-  }
-  function drawTextPair(ctx,w,h,main,sub,opts={}){
-    ctx.textAlign=opts.align||'center';ctx.textBaseline='middle';
-    ctx.fillStyle=opts.color||'#fff';
-    ctx.font=`${Math.max(28,Math.round(w*.041))}px Georgia, serif`;
-    ctx.fillText(main,opts.x??w/2,opts.y??h*.89);
-    ctx.font=`700 ${Math.max(12,Math.round(w*.014))}px Arial, sans-serif`;
-    ctx.letterSpacing='2px';
-    ctx.fillText(sub,opts.x??w/2,(opts.y??h*.89)+Math.max(30,h*.027));
-  }
-  function addGrain(ctx,w,h,amount=0.035){
+  function addGrain(ctx,w,h,amount=.035){
     ctx.save();ctx.globalAlpha=amount;
-    for(let i=0;i<Math.min(9000,Math.floor(w*h/260));i++){
-      const v=Math.random()>.5?255:0;
-      ctx.fillStyle=`rgb(${v},${v},${v})`;
-      const z=Math.random()*1.5+.35;
-      ctx.fillRect(Math.random()*w,Math.random()*h,z,z);
-    }ctx.restore();
-  }
-  function drawJavaneseCorners(ctx,w,h,color){
-    const m=w*.035, len=w*.12;
-    ctx.save();ctx.strokeStyle=color;ctx.lineWidth=Math.max(3,w*.003);ctx.globalAlpha=.92;
-    const corner=(x,y,sx,sy)=>{
-      ctx.beginPath();
-      ctx.moveTo(x,y+sy*len);ctx.bezierCurveTo(x+sx*len*.15,y+sy*len*.55,x+sx*len*.55,y+sy*len*.15,x+sx*len,y);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(x,y+sy*len*.64);ctx.bezierCurveTo(x+sx*len*.18,y+sy*len*.42,x+sx*len*.35,y+sy*len*.2,x+sx*len*.63,y);
-      ctx.stroke();
-    };
-    corner(m,m,1,1);corner(w-m,m,-1,1);corner(m,h-m,1,-1);corner(w-m,h-m,-1,-1);
+    const n=Math.min(7000,Math.floor(w*h/320));
+    for(let i=0;i<n;i++){const v=Math.random()>.5?255:0;ctx.fillStyle=`rgb(${v},${v},${v})`;const z=Math.random()*1.3+.3;ctx.fillRect(Math.random()*w,Math.random()*h,z,z)}
     ctx.restore();
   }
-  function canvasBlob(){return new Promise((resolve,reject)=>{
-    const v=$('cameraVideo'),c=$('captureCanvas'); if(!v.videoWidth)return reject(new Error('camera not ready'));
-    const maxSide=1600, scale=Math.min(1,maxSide/Math.max(v.videoWidth,v.videoHeight));
-    const w=Math.max(720,Math.round(v.videoWidth*scale)),h=Math.max(960,Math.round(v.videoHeight*scale));
-    c.width=w;c.height=h;const x=c.getContext('2d');
-    x.save();
-    if(facing==='user'){x.translate(w,0);x.scale(-1,1)}
-    const filters={elegant:'contrast(1.04) saturate(.92) sepia(.08)',vintage:'contrast(1.12) saturate(.72) sepia(.28)',polaroid:'contrast(1.03) saturate(.92)',javanese:'contrast(1.06) saturate(.9) sepia(.12)',clean:'contrast(1.02) saturate(.98)'};
-    x.filter=filters[photoTheme]||'none';
-
-    if(photoTheme==='polaroid'){
-      x.restore(); x.save(); x.fillStyle='#f8f6ef';x.fillRect(0,0,w,h);
-      const side=w*.045,top=h*.035,bottom=h*.17;
-      x.save();
-      if(facing==='user'){x.translate(w,0);x.scale(-1,1)}
-      x.filter=filters.polaroid;
-      fitCover(x,v,side,top,w-side*2,h-top-bottom,v.videoWidth,v.videoHeight);
-      x.restore();
-      x.fillStyle='#141414';x.textAlign='center';
-      x.font=`${Math.max(28,Math.round(w*.044))}px Georgia, serif`;x.fillText(eventData.title||'Zaky & Agnes',w/2,h-bottom*.58);
-      x.font=`700 ${Math.max(12,Math.round(w*.014))}px Arial`;x.fillText(themeDate(),w/2,h-bottom*.28);
-      x.font=`700 ${Math.max(10,Math.round(w*.011))}px Arial`;x.fillStyle='#777';x.fillText('ZA MOMENTS · WEDDING FILM',w/2,h-bottom*.12);
-    }else{
-      fitCover(x,v,0,0,w,h,v.videoWidth,v.videoHeight);
-      x.restore();
-      if(photoTheme==='elegant'){
-        x.fillStyle='rgba(239,218,184,.06)';x.fillRect(0,0,w,h);
-        const g=x.createLinearGradient(0,h*.62,0,h);g.addColorStop(0,'rgba(28,16,10,0)');g.addColorStop(1,'rgba(28,16,10,.68)');x.fillStyle=g;x.fillRect(0,h*.58,w,h*.42);
-        x.strokeStyle='rgba(247,233,205,.94)';x.lineWidth=Math.max(3,w*.004);x.strokeRect(w*.025,h*.022,w*.95,h*.956);
-        drawTextPair(x,w,h,eventData.title||'Zaky & Agnes',themeDate(),{color:'#f7ead3',y:h*.88});
-        x.fillStyle='rgba(247,234,211,.9)';x.font=`700 ${Math.max(10,Math.round(w*.011))}px Arial`;x.textAlign='left';x.fillText('ZA MOMENTS',w*.05,h*.06);
-      }
-      if(photoTheme==='vintage'){
-        const vg=x.createRadialGradient(w/2,h*.48,Math.min(w,h)*.15,w/2,h*.5,Math.max(w,h)*.72);
-        vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.56)');x.fillStyle=vg;x.fillRect(0,0,w,h);
-        addGrain(x,w,h,.06);
-        x.strokeStyle='rgba(15,15,15,.9)';x.lineWidth=Math.max(12,w*.016);x.strokeRect(0,0,w,h);
-        x.fillStyle='#f1c76f';x.font=`700 ${Math.max(14,Math.round(w*.017))}px monospace`;x.textAlign='left';x.fillText('ZA • 27',w*.05,h*.065);
-        x.textAlign='right';x.fillText(themeDate().replaceAll(' · ','.'),w*.95,h*.94);
-      }
-      if(photoTheme==='javanese'){
-        const g=x.createLinearGradient(0,h*.65,0,h);g.addColorStop(0,'rgba(78,10,20,0)');g.addColorStop(1,'rgba(78,10,20,.88)');x.fillStyle=g;x.fillRect(0,h*.56,w,h*.44);
-        x.strokeStyle='#d8ad58';x.lineWidth=Math.max(3,w*.004);x.strokeRect(w*.022,h*.018,w*.956,h*.964);
-        x.strokeStyle='rgba(216,173,88,.55)';x.lineWidth=Math.max(1,w*.0015);x.strokeRect(w*.034,h*.03,w*.932,h*.94);
-        drawJavaneseCorners(x,w,h,'#e5bd69');
-        drawTextPair(x,w,h,eventData.title||'Zaky & Agnes',themeDate(),{color:'#efd18b',y:h*.88});
-        x.fillStyle='#efd18b';x.font=`700 ${Math.max(10,Math.round(w*.011))}px Arial`;x.textAlign='center';x.fillText('WEDDING FILM · MUARA BADAK',w/2,h*.955);
-      }
-      if(photoTheme==='clean'){
-        x.fillStyle='rgba(255,255,255,.94)';x.fillRect(0,h*.885,w,h*.115);
-        x.fillStyle='#111';x.textAlign='left';x.font=`700 ${Math.max(17,Math.round(w*.023))}px Arial`;x.fillText(eventData.title||'Zaky & Agnes',w*.045,h*.925);
-        x.textAlign='right';x.font=`700 ${Math.max(11,Math.round(w*.013))}px Arial`;x.fillText(themeDate(),w*.955,h*.925);
-        x.textAlign='left';x.fillStyle='#777';x.font=`700 ${Math.max(9,Math.round(w*.01))}px Arial`;x.fillText('ZA MOMENTS',w*.045,h*.965);
-      }
+  function titlePair(ctx,w,h,color='#fff',y=.89,align='center',font='Georgia'){
+    ctx.save();ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='middle';
+    const x=align==='left'?w*.055:align==='right'?w*.945:w/2;
+    ctx.font=`${Math.max(26,Math.round(w*.041))}px ${font}`;ctx.fillText(eventData.title||'Zaky & Agnes',x,h*y);
+    ctx.font=`700 ${Math.max(11,Math.round(w*.014))}px Arial`;ctx.fillText(themeDate(),x,h*y+Math.max(28,h*.026));ctx.restore();
+  }
+  function javaCorners(ctx,w,h,color='#e0b55c'){
+    const m=w*.04,l=w*.14;ctx.save();ctx.strokeStyle=color;ctx.lineWidth=Math.max(2.4,w*.003);ctx.globalAlpha=.96;
+    [[m,m,1,1],[w-m,m,-1,1],[m,h-m,1,-1],[w-m,h-m,-1,-1]].forEach(([x,y,sx,sy])=>{
+      ctx.beginPath();ctx.moveTo(x,y+sy*l);ctx.bezierCurveTo(x+sx*l*.1,y+sy*l*.54,x+sx*l*.55,y+sy*l*.1,x+sx*l,y);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(x,y+sy*l*.66);ctx.bezierCurveTo(x+sx*l*.16,y+sy*l*.4,x+sx*l*.36,y+sy*l*.18,x+sx*l*.66,y);ctx.stroke();
+    });ctx.restore();
+  }
+  function batikBand(ctx,w,h){
+    ctx.save();ctx.fillStyle='rgba(77,43,20,.8)';ctx.fillRect(0,h*.86,w,h*.14);
+    ctx.strokeStyle='rgba(232,194,123,.8)';ctx.lineWidth=Math.max(1.5,w*.002);
+    const step=w*.075;
+    for(let x=-step;x<w+step;x+=step){ctx.beginPath();ctx.moveTo(x,h*.93);ctx.lineTo(x+step/2,h*.875);ctx.lineTo(x+step,h*.93);ctx.lineTo(x+step/2,h*.985);ctx.closePath();ctx.stroke()}
+    ctx.restore();
+  }
+  function roseCorners(ctx,w,h){
+    ctx.save();ctx.globalAlpha=.62;ctx.fillStyle='#f1c4cf';
+    const draw=(cx,cy,flip=1)=>{for(let i=0;i<5;i++){const a=i*Math.PI*2/5;ctx.beginPath();ctx.ellipse(cx+Math.cos(a)*w*.025,cy+Math.sin(a)*w*.025,w*.022,w*.011,a,0,Math.PI*2);ctx.fill()}ctx.fillStyle='#fff0d5';ctx.beginPath();ctx.arc(cx,cy,w*.012,0,Math.PI*2);ctx.fill();ctx.fillStyle='#f1c4cf'};
+    draw(w*.07,h*.08);draw(w*.93,h*.92);ctx.restore();
+  }
+  function roundRect(ctx,x,y,w,h,r){const rr=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+rr,y);ctx.arcTo(x+w,y,x+w,y+h,rr);ctx.arcTo(x+w,y+h,x,y+h,rr);ctx.arcTo(x,y+h,x,y,rr);ctx.arcTo(x,y,x+w,y,rr);ctx.closePath();}
+  function doubleBorder(ctx,x,y,w,h,o1,o2,c1,c2){ctx.save();ctx.strokeStyle=c1;ctx.lineWidth=o1;ctx.strokeRect(x,y,w,h);ctx.strokeStyle=c2;ctx.lineWidth=o2;ctx.strokeRect(x+14,y+14,w-28,h-28);ctx.restore();}
+  function pillPlaque(ctx,x,y,w,h,bg,fg,t1,t2){ctx.save();roundRect(ctx,x,y,w,h,h/2);ctx.fillStyle=bg;ctx.fill();ctx.shadowColor='rgba(0,0,0,.18)';ctx.shadowBlur=18;ctx.shadowOffsetY=4;roundRect(ctx,x,y,w,h,h/2);ctx.strokeStyle='rgba(255,255,255,.16)';ctx.lineWidth=1.2;ctx.stroke();ctx.shadowColor='transparent';ctx.fillStyle=fg;ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=`${Math.max(20,Math.round(w*.06))}px Georgia`;ctx.fillText(t1,x+w/2,y+h*.44);ctx.font=`700 ${Math.max(10,Math.round(w*.028))}px Arial`;ctx.fillText(t2,x+w/2,y+h*.73);ctx.restore();}
+  function topRibbon(ctx,cx,y,w,h,bg,fg,text){ctx.save();roundRect(ctx,cx-w/2,y,w,h,h/2);ctx.fillStyle=bg;ctx.fill();ctx.strokeStyle='rgba(255,255,255,.18)';ctx.lineWidth=1;ctx.stroke();ctx.fillStyle=fg;ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=`700 ${Math.max(9,Math.round(w*.06))}px Arial`;ctx.fillText(text,cx,y+h/2+0.5);ctx.restore();}
+  function seal(ctx,cx,cy,r,fill,stroke,text){ctx.save();ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fillStyle=fill;ctx.shadowColor='rgba(0,0,0,.18)';ctx.shadowBlur=18;ctx.shadowOffsetY=4;ctx.fill();ctx.shadowColor='transparent';ctx.lineWidth=Math.max(2,r*.12);ctx.strokeStyle=stroke;ctx.stroke();ctx.beginPath();ctx.arc(cx,cy,r*.7,0,Math.PI*2);ctx.lineWidth=Math.max(1.2,r*.06);ctx.stroke();ctx.fillStyle=stroke;ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=`700 ${Math.max(14,r*.9)}px Georgia`;ctx.fillText(text,cx,cy+1);ctx.restore();}
+  function flourish(ctx,x,y,scale,color,flip=1){ctx.save();ctx.translate(x,y);ctx.scale(scale*flip,scale);ctx.strokeStyle=color;ctx.lineWidth=2.2;ctx.globalAlpha=.95;ctx.beginPath();ctx.moveTo(0,24);ctx.bezierCurveTo(10,8,28,4,44,18);ctx.bezierCurveTo(34,10,23,12,18,24);ctx.bezierCurveTo(35,17,54,20,64,36);ctx.stroke();ctx.beginPath();ctx.moveTo(18,24);ctx.bezierCurveTo(14,36,18,44,28,48);ctx.stroke();ctx.restore();}
+  function flowerCluster(ctx,x,y,scale){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);const petals=['#f8d8df','#ffe9ef','#f4bfca'];for(let i=0;i<6;i++){const a=i*Math.PI/3;ctx.fillStyle=petals[i%petals.length];ctx.beginPath();ctx.ellipse(Math.cos(a)*10,Math.sin(a)*10,8,14,a,0,Math.PI*2);ctx.fill();}ctx.fillStyle='#f6efcf';ctx.beginPath();ctx.arc(0,0,6,0,Math.PI*2);ctx.fill();ctx.restore();}
+  function leafSprig(ctx,x,y,scale,color,flip=1){ctx.save();ctx.translate(x,y);ctx.scale(scale*flip,scale);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(18,18,38,44);ctx.stroke();for(const p of [[10,10,8,4,0.7],[18,20,10,5,0.3],[26,30,11,5.5,-0.1],[33,40,9,4.5,-0.4]]){ctx.save();ctx.translate(p[0],p[1]);ctx.rotate(p[4]);ctx.fillStyle='rgba(242,239,228,.75)';ctx.beginPath();ctx.ellipse(0,0,p[2],p[3],0,0,Math.PI*2);ctx.fill();ctx.restore();}ctx.restore();}
+  function starField(ctx,w,h){ctx.save();ctx.fillStyle='rgba(255,255,255,.92)';[[.18,.16,1.7],[.76,.2,1.4],[.85,.35,1.8],[.62,.12,1.1],[.3,.28,1.2]].forEach(([x,y,r])=>{ctx.beginPath();ctx.arc(w*x,h*y,r,0,Math.PI*2);ctx.fill();});ctx.restore();}
+  function sprockets(ctx,w,h){ctx.save();ctx.fillStyle='rgba(15,15,15,.95)';ctx.fillRect(0,0,14,h);ctx.fillRect(w-14,0,14,h);ctx.clearRect(4,10,6,12);for(let y=34;y<h-22;y+=26){ctx.clearRect(4,y,6,12);ctx.clearRect(w-10,y,6,12);}ctx.restore();}
+  function bottomGradient(ctx,w,h,c1,c2,top=.56){const g=ctx.createLinearGradient(0,h*top,0,h);g.addColorStop(0,c1);g.addColorStop(1,c2);ctx.fillStyle=g;ctx.fillRect(0,h*top,w,h*(1-top));}
+  function drawOverlay(ctx,w,h,theme){
+    const title=eventData.title||'Zaky & Agnes', date=themeDate();
+    if(theme==='signature'){
+      bottomGradient(ctx,w,h,'rgba(30,20,11,0)','rgba(30,20,11,.76)',.54);
+      doubleBorder(ctx,w*.022,h*.017,w*.956,h*.966,2.8,1.2,'rgba(247,229,191,.98)','rgba(255,255,255,.22)');
+      seal(ctx,w/2,h*.092,Math.max(24,w*.044),'#ead4a5','#876228','ZA');
+      ctx.save();ctx.strokeStyle='rgba(246,226,187,.95)';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(w*.16,h*.098);ctx.lineTo(w*.36,h*.098);ctx.moveTo(w*.64,h*.098);ctx.lineTo(w*.84,h*.098);ctx.stroke();ctx.restore();
+      pillPlaque(ctx,w*.13,h*.835,w*.74,h*.092,'rgba(58,40,17,.82)','#fbf0df',title,date);
+      ctx.fillStyle='#f7e5bf';ctx.textAlign='center';ctx.font=`700 ${Math.max(10,w*.0118)}px Arial`;ctx.fillText('LUXURY SIGNATURE COLLECTION',w/2,h*.948);
+    } else if(theme==='rose') {
+      bottomGradient(ctx,w,h,'rgba(119,52,69,0)','rgba(119,52,69,.82)',.54);
+      doubleBorder(ctx,w*.026,h*.02,w*.948,h*.96,2.2,1,'rgba(255,235,239,.98)','rgba(255,255,255,.2)');
+      ctx.strokeStyle='rgba(255,240,243,.94)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(w/2,h*.078,w*.16,Math.PI,0);ctx.stroke();
+      flowerCluster(ctx,w*.15,h*.115,1.05); flowerCluster(ctx,w*.85,h*.115,1.05); flowerCluster(ctx,w*.10,h*.87,.86); flowerCluster(ctx,w*.90,h*.87,.86);
+      flourish(ctx,w*.20,h*.085,w*.0013*h,'#ffe6eb',1); flourish(ctx,w*.80,h*.085,w*.0013*h,'#ffe6eb',-1);
+      pillPlaque(ctx,w*.135,h*.835,w*.73,h*.09,'rgba(111,49,64,.8)','#fff4f5',title,date);
+      ctx.fillStyle='#ffeef1';ctx.textAlign='center';ctx.font=`700 ${Math.max(10,w*.0118)}px Arial`;ctx.fillText('FLORAL LUXE EDITION',w/2,h*.948);
+    } else if(theme==='java') {
+      bottomGradient(ctx,w,h,'rgba(78,10,24,0)','rgba(78,10,24,.93)',.52);
+      doubleBorder(ctx,w*.02,h*.016,w*.96,h*.968,3.0,1.2,'#dcb35c','rgba(220,179,92,.44)');
+      flourish(ctx,w*.08,h*.085,w*.00165*h,'#e1b95e',1); flourish(ctx,w*.92,h*.085,w*.00165*h,'#e1b95e',-1); flourish(ctx,w*.08,h*.915,w*.00165*h,'#e1b95e',1); flourish(ctx,w*.92,h*.915,w*.00165*h,'#e1b95e',-1);
+      topRibbon(ctx,w/2,h*.055,w*.31,h*.035,'rgba(229,199,134,.94)','#5c1821','HERITAGE WEDDING');
+      pillPlaque(ctx,w*.13,h*.835,w*.74,h*.092,'rgba(92,17,31,.88)','#f1d390',title,date);
+      ctx.fillStyle='#f1d390';ctx.textAlign='center';ctx.font=`700 ${Math.max(10,w*.0118)}px Arial`;ctx.fillText('JAVA HERITAGE COLLECTION',w/2,h*.948);
+    } else if(theme==='editorial') {
+      ctx.fillStyle='rgba(0,0,0,.12)';ctx.fillRect(0,0,w,h);
+      doubleBorder(ctx,0,0,w,h,12,1,'rgba(10,10,10,.98)','rgba(255,255,255,.14)');
+      ctx.fillStyle='rgba(10,10,10,.96)';ctx.fillRect(0,h*.82,w,h*.18);
+      ctx.fillStyle='#fff';ctx.textAlign='left';ctx.font=`900 ${Math.max(26,w*.033)}px Arial`;ctx.fillText(title.toUpperCase(),w*.045,h*.885);
+      ctx.font=`700 ${Math.max(10,w*.013)}px Arial`;ctx.fillStyle='#d6d6d6';ctx.fillText(`${date}  /  ISSUE 07`,w*.045,h*.935);
+      ctx.textAlign='right';ctx.fillStyle='#fff';ctx.font=`900 ${Math.max(58,w*.078)}px Georgia`;ctx.fillText('07',w*.94,h*.12);
+      topRibbon(ctx,w*.17,h*.055,w*.22,h*.032,'rgba(10,10,10,.95)','#fff','EDITORIAL LUXE');
+    } else if(theme==='midnight') {
+      bottomGradient(ctx,w,h,'rgba(5,16,42,0)','rgba(5,16,42,.93)',.53); starField(ctx,w,h);
+      doubleBorder(ctx,w*.025,h*.019,w*.95,h*.962,2.4,1,'rgba(205,217,246,.85)','rgba(255,255,255,.14)');
+      seal(ctx,w/2,h*.09,Math.max(23,w*.043),'rgba(13,29,67,.92)','#d9e6ff','✦');
+      pillPlaque(ctx,w*.135,h*.835,w*.73,h*.09,'rgba(8,18,43,.88)','#eef3ff',title,date);
+      ctx.fillStyle='#dbe7ff';ctx.textAlign='center';ctx.font=`700 ${Math.max(10,w*.0118)}px Arial`;ctx.fillText('MIDNIGHT GALA COLLECTION',w/2,h*.948);
+    } else if(theme==='polaroid') {
+      // handled elsewhere
+    } else {
+      bottomGradient(ctx,w,h,'rgba(30,20,11,0)','rgba(30,20,11,.76)',.54);
+      doubleBorder(ctx,w*.022,h*.017,w*.956,h*.966,2.8,1.2,'rgba(247,229,191,.98)','rgba(255,255,255,.22)');
+      pillPlaque(ctx,w*.13,h*.835,w*.74,h*.092,'rgba(58,40,17,.82)','#fbf0df',title,date);
     }
-    if(flashVisual){x.fillStyle='rgba(255,250,230,.09)';x.fillRect(0,0,w,h)}
-    c.toBlob(b=>b?resolve(b):reject(new Error('capture failed')),'image/jpeg',.9)
-  })}
-  function blobDataURL(blob){return new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(blob)})}
-  window.takePhoto=async()=>{
-    if(busy)return; const max=eventData.shots_per_guest||12; if(usedShots>=max){goScreen('develop');return} busy=true;$('shutterButton').disabled=true;
+  }
+  async function blobFromCanvas(c,quality=.84){
+    const b=await new Promise(res=>c.toBlob(res,'image/jpeg',quality));
+    if(b)return b;
+    const data=c.toDataURL('image/jpeg',quality);const r=await fetch(data);return await r.blob();
+  }
+  async function canvasBlob(){
+    const v=$('cameraVideo'),c=$('captureCanvas');
+    if(!cameraReady || !v.videoWidth || !v.videoHeight){await waitVideoReady(v,2600)}
+    if(!v.videoWidth || !v.videoHeight)throw new Error('camera_not_ready');
+    if('requestVideoFrameCallback' in v)await new Promise(resolve=>{let done=false;const t=setTimeout(()=>{if(!done){done=true;resolve()}},500);v.requestVideoFrameCallback(()=>{if(!done){done=true;clearTimeout(t);resolve()}})});
+    const maxSide=1280, scale=Math.min(1,maxSide/Math.max(v.videoWidth,v.videoHeight));
+    const w=Math.max(1,Math.round(v.videoWidth*scale)),h=Math.max(1,Math.round(v.videoHeight*scale));
+    c.width=w;c.height=h;const x=c.getContext('2d',{alpha:true});if(!x)throw new Error('canvas_failed');
+    x.save();if(facing==='user'){x.translate(w,0);x.scale(-1,1)}
+    fitCover(x,v,0,0,w,h,v.videoWidth,v.videoHeight);
+    x.restore();
     try{
-      const blob=await canvasBlob(); const thumb=await blobDataURL(blob); $('lastThumb').innerHTML=`<img src="${thumb}" alt="last moment">`;
-      if(configured && eventData.id){
-        const file=`${eventData.id}/${guestId}/${Date.now()}-${crypto.randomUUID()}.jpg`;
-        const up=await sb.storage.from('moments').upload(file,blob,{contentType:'image/jpeg',upsert:false}); if(up.error)throw up.error;
-        const row=await sb.from('photos').insert({event_id:eventData.id,guest_token:guestId,storage_path:file});
-        if(row.error){await sb.storage.from('moments').remove([file]);throw row.error}
-      }else{
-        const photos=localPhotos(); photos.unshift({src:thumb,at:new Date().toISOString(),guest_token:guestId}); setLocalPhotos(photos);
-      }
-      usedShots++;paintEvent();showToast(`${THEME_NAMES[photoTheme]} · saved`); if(usedShots>=max)setTimeout(()=>goScreen('develop'),700);
-    }catch(e){console.error(e);showToast(e.message?.includes('shot_limit')?'No shots left':'Upload failed · try again')}
-    finally{busy=false;$('shutterButton').disabled=false}
+      const frameImg=await loadFrameAsset(photoTheme);
+      if(frameImg) x.drawImage(frameImg,0,0,w,h);
+      else drawOverlay(x,w,h,photoTheme);
+    }catch(e){
+      console.warn('frame fallback',e);
+      drawOverlay(x,w,h,photoTheme);
+    }
+    if(flashVisual){x.fillStyle='rgba(255,250,230,.07)';x.fillRect(0,0,w,h)}
+    return await blobFromCanvas(c,.92);
+  }
+  async function captureWithRetry(){
+    let last;
+    for(let i=0;i<3;i++){try{return await canvasBlob()}catch(e){last=e;await wait(180+i*180)}}
+    throw last||new Error('capture_failed');
+  }
+  function blobURL(blob){return URL.createObjectURL(blob)}
+  async function retry(fn,tries=3){
+    let last;for(let i=0;i<tries;i++){try{return await fn()}catch(e){last=e;if(i<tries-1)await wait(500*Math.pow(2,i))}}throw last
+  }
+  async function syncRecord(rec,silent=false){
+    if(!configured || !eventData.id || !navigator.onLine || rec.status!=='pending')return false;
+    setSyncState('SYNCING','wait');
+    try{
+      const upload=await retry(async()=>{
+        const r=await sb.storage.from('moments').upload(rec.storagePath,rec.blob,{contentType:'image/jpeg',upsert:false});
+        if(r.error){
+          const msg=(r.error.message||'').toLowerCase();
+          if(msg.includes('already exists')||msg.includes('duplicate'))return {ok:true};
+          throw r.error;
+        }return r;
+      },3);
+      const row=await retry(async()=>{
+        const r=await sb.from('photos').insert({event_id:eventData.id,guest_token:guestId,storage_path:rec.storagePath,theme:rec.theme});
+        if(r.error){
+          if(r.error.code==='23505'||(r.error.message||'').toLowerCase().includes('duplicate'))return {ok:true};
+          throw r.error;
+        }return r;
+      },3);
+      await dbDelete(rec.id);
+      const key=`za_count_${eventSlug}_${guestId}`;localStorage.setItem(key,String(Number(localStorage.getItem(key)||0)+1));
+      setSyncState('SYNCED','ok');if(!silent)showToast('Foto aman · synced ✓');return true;
+    }catch(e){
+      console.warn('sync pending',e);setSyncState('WAITING SYNC','wait');if(!silent)showToast('Foto aman di HP · akan sync otomatis');return false;
+    }
+  }
+  async function syncPending(silent=false){
+    if(!configured || !eventData.id || !navigator.onLine)return;
+    const list=(await pendingCaptures()).filter(r=>r.eventId===eventData.id);
+    for(const rec of list)await syncRecord(rec,true);
+    if(list.length && !silent)showToast('Antrean foto selesai disinkronkan');
+  }
+  window.takePhoto=async()=>{
+    if(busy)return;
+    const max=eventData.shots_per_guest||12;if(usedShots>=max){goScreen('develop');return}
+    busy=true;$('shutterButton').disabled=true;
+    try{
+      const blob=await captureWithRetry();
+      const id=crypto.randomUUID();
+      const storagePath=eventData.id?`${eventData.id}/${guestId}/${Date.now()}-${id}.jpg`:null;
+      const rec={id,eventSlug,eventGuest:`${eventSlug}:${guestId}`,eventId:eventData.id||null,guestId,theme:photoTheme,capturedAt:new Date().toISOString(),blob,status:(configured&&eventData.id)?'pending':'local',storagePath};
+      await dbPut(rec);
+      $('lastThumb').innerHTML=`<img src="${blobURL(blob)}" alt="last moment">`;
+      usedShots++;paintEvent();
+      showToast(configured&&eventData.id?'Tersimpan aman · syncing…':'Tersimpan aman di HP ✓');
+      if(configured&&eventData.id)syncRecord(rec,true);
+      if(usedShots>=max)setTimeout(()=>goScreen('develop'),650);
+    }catch(e){
+      console.error(e);
+      const msg=(e?.name==='QuotaExceededError')?'Penyimpanan HP penuh':(e?.message||'').includes('camera')?'Kamera belum siap · coba lagi':'Gagal memproses foto · coba sekali lagi';
+      showToast(msg);
+    }finally{busy=false;$('shutterButton').disabled=false}
   };
 
   window.openGallery=()=>{goScreen(isRevealed()?'gallery':'develop')};
   async function renderGallery(){
     const grid=$('galleryGrid');grid.innerHTML='<div class="empty">Loading film…</div>';
     if(!isRevealed()){$('galleryStatus').textContent='LOCKED';grid.innerHTML='<div class="empty">This film is still developing.<br>Come back after the reveal time.</div>';return}
-    $('galleryStatus').textContent='OPEN'; let photos=[];
+    $('galleryStatus').textContent='OPEN';let photos=[];
     if(configured && eventData.id){
-      const {data,error}=await sb.from('photos').select('id,storage_path,created_at,guest_token').eq('event_id',eventData.id).order('created_at',{ascending:false});
-      if(!error && data){photos=await Promise.all(data.map(async p=>{const {data:u}=sb.storage.from('moments').getPublicUrl(p.storage_path);return {...p,src:u.publicUrl}}))}
-    } else photos=localPhotos();
+      await syncPending(true);
+      try{
+        const {data,error}=await sb.from('photos').select('id,storage_path,created_at,guest_token,theme').eq('event_id',eventData.id).order('created_at',{ascending:false});
+        if(!error&&data)photos=data.map(p=>{const {data:u}=sb.storage.from('moments').getPublicUrl(p.storage_path);return {...p,src:u.publicUrl}});
+      }catch{}
+      const pending=(await pendingCaptures()).filter(r=>r.eventId===eventData.id);
+      photos=[...pending.map(r=>({src:blobURL(r.blob),guest_token:guestId,theme:r.theme,pending:true})),...photos];
+    }else{
+      const local=await myLocalCaptures();photos=local.sort((a,b)=>String(b.capturedAt).localeCompare(String(a.capturedAt))).map(r=>({src:blobURL(r.blob),guest_token:guestId,theme:r.theme}));
+    }
     $('galleryCount').textContent=`${photos.length} moments`;
-    grid.innerHTML=photos.length?photos.map((p,i)=>`<div class="gphoto"><img loading="lazy" src="${p.src}" alt="Wedding moment ${i+1}">${p.guest_token===guestId?'<small>MY SHOT</small>':''}</div>`).join(''):'<div class="empty">No moments yet.</div>';
+    grid.innerHTML=photos.length?photos.map((p,i)=>`<div class="gphoto"><img loading="lazy" src="${p.src}" alt="Wedding moment ${i+1}"><small>${p.pending?'SYNCING · ':''}${THEME_NAMES[p.theme]||''}${p.guest_token===guestId?' · MY SHOT':''}</small></div>`).join(''):'<div class="empty">No moments yet.</div>';
   }
   window.downloadMyPhotos=async()=>{
-    let photos=[];
-    if(configured && eventData.id){const {data}=await sb.from('photos').select('storage_path').eq('event_id',eventData.id).eq('guest_token',guestId);photos=data||[];for(const [i,p] of photos.entries()){const {data:u}=sb.storage.from('moments').getPublicUrl(p.storage_path);const a=document.createElement('a');a.href=u.publicUrl;a.download=`ZA-Moment-${i+1}.jpg`;a.target='_blank';a.click()}}
-    else {photos=localPhotos();photos.forEach((p,i)=>{const a=document.createElement('a');a.href=p.src;a.download=`ZA-Moment-${i+1}.jpg`;a.click()})}
-    if(!photos.length)showToast('No photos yet');
+    const local=await myLocalCaptures();let count=0;
+    for(const [i,r] of local.entries()){const a=document.createElement('a');a.href=blobURL(r.blob);a.download=`ZA-Moment-${String(i+1).padStart(2,'0')}-${r.theme||'photo'}.jpg`;a.click();count++}
+    if(configured&&eventData.id){
+      try{
+        const {data}=await sb.from('photos').select('storage_path').eq('event_id',eventData.id).eq('guest_token',guestId);
+        for(const [i,p] of (data||[]).entries()){const {data:u}=sb.storage.from('moments').getPublicUrl(p.storage_path);const a=document.createElement('a');a.href=u.publicUrl;a.download=`ZA-Moment-Cloud-${i+1}.jpg`;a.target='_blank';a.click();count++}
+      }catch{}
+    }
+    if(!count)showToast('Belum ada foto');
   };
   window.shareEvent=async()=>{const url=location.href.split('#')[0];try{if(navigator.share)await navigator.share({title:eventData.title,text:'Open our disposable wedding camera',url});else{await navigator.clipboard.writeText(url);showToast('Event link copied')}}catch{}};
   function tick(){const d=new Date(eventData.reveal_at).getTime()-Date.now(),el=$('developCountdown');if(d<=0){el.textContent='GALLERY OPEN';$('developButton').textContent='OPEN GALLERY';return}const days=Math.floor(d/86400000),h=Math.floor((d%86400000)/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);el.textContent=`${days}d ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
   $('appModal').addEventListener('click',e=>{if(e.target===$('appModal'))closeEvent()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeEvent()});
-  updateThemeUI();loadEvent();tick();setInterval(tick,1000);
+  window.addEventListener('online',()=>{setSyncState(configured?'SYNCING':'LOCAL SAFE',configured?'wait':'off');syncPending(false)});
+  window.addEventListener('offline',()=>setSyncState('OFFLINE SAFE','wait'));
+  updateThemeUI();loadEvent();tick();setInterval(tick,1000);setInterval(()=>syncPending(true),15000);
 })();
 
 </script></body></html>
